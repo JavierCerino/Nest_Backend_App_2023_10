@@ -1,0 +1,564 @@
+{
+	"info": {
+		"_postman_id": "711a1916-2acd-402a-b025-9d6549d9dd3b",
+		"name": "Promocion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "17257891-711a1916-2acd-402a-b025-9d6549d9dd3b"
+	},
+	"item": [
+		{
+			"name": "Add Promocion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5778605f-7da9-4f0d-b6f9-15d5810dc4a5",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"promocion_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ac3186bd-d384-47ad-970d-f3c79eb48bdc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a784ce41-b916-409c-a161-f14996d6263f",
+					"name": "Add Promocion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\" ,\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Promociones",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "67a0f19d-bd0c-4101-b8e5-661f19fd40d5",
+						"exec": [
+							"pm.test('Number of promociones > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4c1bffa3-f915-47a6-8ced-383ec0790fd8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "188083ea-9a2f-4cf6-a0e9-1d1d9b2a3604",
+					"name": "Get All Promociones",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\" ,\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n    },\r\n    {\r\n    \"id\": \"o1u30u1b9gn9nue9fj10fni\" ,\r\n    \"tipo\": \"2x1\",\r\n    \"descripcion\": \"2x1 En hamburguesas\"\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Promocion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6be807b6-d08d-466e-859c-8b42bfd7e707",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c781db5c-16a4-43bf-ae30-2ca8f54f852a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/promociones/{{promocion_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones",
+						"{{promocion_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "91487389-450d-448e-bfd8-2ba523510113",
+					"name": "Get Promocion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion/{{promocion_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion",
+								"{{promocion_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\" ,\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Promocion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0741c64b-3908-4952-9527-b7dbd3b42b80",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Promocion no encontrada\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a889bfaa-d153-4f88-a241-872320480917",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/promociones/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a8409712-fe01-4339-a97a-627b0f134296",
+					"name": "Get invalid Promocion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion/{{promocion_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion",
+								"{{promocion_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"La promocion con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Promocion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a094333b-8954-46ea-9359-a36eb26d30dc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e084b50d-b513-47a4-95cf-fd6c01343456",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"20% de descuento en compras mayores a 100000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/promociones/{{promocion_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones",
+						"{{promocion_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "62a10610-1336-4602-8c4a-8258bb3b2631",
+					"name": "Update Promocion",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion/{{promocion_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion",
+								"{{promocion_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\" ,\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update invalid Promocion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e401573d-4cf1-4871-bf84-ba513fd931b1",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Promocion no encontrada\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3ad434ca-913b-4ed1-9da9-9b44518912b6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"20% de descuento en compras mayores a 100000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/promociones/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "18664750-dc20-434d-979a-0cf45898d752",
+					"name": "Update invalid Promocion",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion/{{promocion_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion",
+								"{{promocion_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"La promocion con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Promocion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "52608628-7eda-45cb-90f1-30a73a3f5745",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b8ca3ef5-dd6a-4134-9628-4866b6483622",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/promociones/{{promocion_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones",
+						"{{promocion_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "2a37c567-f579-4cb8-ac8e-c62cfa755426",
+					"name": "Delete Promocion",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion/{{promocion_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion",
+								"{{promocion_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete invalid Promocion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c4561707-959c-4115-9dac-ef4c00d87fd0",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Promocion no encontrada\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "faa008ee-92ab-4532-8788-f79da08585d2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/promociones/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "bc04c7c8-b8aa-403c-b8aa-65535521fe7d",
+					"name": "Delete invalid Promocion",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion/{{promocion_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion",
+								"{{promocion_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"La promocion con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3ee8b526-adfa-4af9-9ff3-0d465de72f28",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5c7be711-6222-4527-b12c-6de247c68936",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "57257afa-1d40-4996-81ca-fc4f9149fbfc",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "23eddd72-618d-4095-b796-89c58f71d12c",
+			"key": "promocion_id",
+			"value": ""
+		}
+	]
+}

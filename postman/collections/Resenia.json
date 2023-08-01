@@ -1,0 +1,1359 @@
+{
+	"info": {
+		"_postman_id": "30338a11-faf2-4d21-8d94-52f3283d63af",
+		"name": "Resenia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25914512-30338a11-faf2-4d21-8d94-52f3283d63af"
+	},
+	"item": [
+		{
+			"name": "Tokens",
+			"item": [
+				{
+					"name": "Get Token Resenia Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_read\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f71674cc-661c-48e7-9beb-ff86ec08fca1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"resenia.read\",\r\n    \"password\": \"reseniaRead\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Resenia Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "ae1737c6-4774-4842-b199-5437d9b56833",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"resenia.write\",\r\n    \"password\": \"reseniaWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Cliente Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"cliente_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2210d443-4e54-479b-8f64-29313354dc74",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"cliente.write\",\r\n    \"password\": \"clienteWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Resenia Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c0c29afd-a81f-47a5-a467-fbfb9e80d572",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"resenia.delete\",\r\n    \"password\": \"reseniaDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token AdminEst Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"AdminEst_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a79df447-73a7-4d7a-a767-b89dfe08eea2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"administradorEstablecimiento.write\",\r\n    \"password\": \"administradorEstablecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "da85c296-1b6a-4365-8963-19a82f8f5d64",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.write\",\r\n    \"password\": \"establecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "a863787a-b585-4a3f-beb3-0c8ab76bac31"
+		},
+		{
+			"name": "Add AdministradorEstablecimiento Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"admin_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e624bc5b-fe4b-40be-b137-eecedd29fbdb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AdminEst_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan Jose\",\r\n    \"apellido\": \"Valencia\",\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "1040c5a0-bf3d-4d85-bdad-86865a759bda",
+					"name": "Add AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an Establecimiento Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"establecimiento_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9590d53f-99c0-46ba-99df-022fd8da56b5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{establecimiento_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":5,\r\n    \"adminEst\": {\r\n        \"id\": \"{{admin_id}}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "720e68c6-67d5-436c-9d86-cc93545677b5",
+					"name": "Add an establecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Cliente Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "37adadcc-de95-4e82-a2c5-6f1d3ec2c37d",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"cliente_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "7b427e79-8acd-4d8d-b035-bc9bc08534e3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{cliente_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Valentina\",\r\n    \"apellido\": \"Escobar\",\r\n    \"usuario\": \"v.escobar1\",\r\n    \"contraseña\": \"d830vfd\",\r\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n    \"perfilAdquisitivo\": 100,\r\n    \"saldo\": 250000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "cb5e70de-483f-4ab8-a74d-da4bcb0a4f00",
+					"name": "Add Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"usuario\": \"v.escobar1\",\r\n   \"contraseña\": \"d830vfd\",\r\n   \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n   \"perfilAdquisitivo\": 100.67,\r\n   \"saldo\": 250.000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "161629fe-0f00-49b0-aee7-9a4d3698a852",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"resenia_id\", data.id)\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3bcb28af-4ffb-4a9e-b8c1-64b91a0f232e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Queja\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"{{cliente_id}}\"\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"{{establecimiento_id}}\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/resenias",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"resenias"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "12f5bd65-5612-40ec-8ef5-fc7f335e5e57",
+					"name": "Add Reseña",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"Queja\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n            \"usuario\": \"e.stiven2\",\r\n            \"contraseña\": \"d83ksds\",\r\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 102.22,\r\n            \"saldo\": 50000\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reseñas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reseñas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"48a9ab22-1276-11ed-861d-0242ac120002\",\r\n    \"tipo\": \"Queja\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Resenias",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "07f9c59a-e7b3-4c03-b4b7-c0945cd7dd03",
+						"exec": [
+							"pm.test('Number of resenias > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "da4c6494-5cc8-47e5-a7b3-6613b4d5eaec",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/resenias",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"resenias"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "36aa3315-4d3c-4ab5-bf98-45d1965d4b90",
+					"name": "Get All Reseñas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reseñas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reseñas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"48a9ab22-1276-11ed-861d-0242ac120002\",\n        \"tipo\": \"Queja\",\n        \"descripcion\": \"La comida servida no contaba con lo pedido\",\n        \"cliente\": {\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\n            \"usuario\": \"e.stiven2\",\n            \"contraseña\": \"d83ksds\",\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\n            \"perfilAdquisitivo\": 102.22,\n            \"saldo\": 50000\n        },\n        \"establecimiento\": {\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n            \"nombre\": \"One Burito\",\n            \"direccion\": \"Calle 21 #2A-49\",\n            \"capacidad\": 5,\n            \"costoPromedio\": 20000,\n            \"calificacionPromedio\": 4.5\n        }\n    },\n    {\n        \"id\": \"22a9ab22-1276-11ed-861d-0242ac120002\",\n        \"tipo\": \"Queja\",\n        \"descripcion\": \"La comida servida no contaba con lo pedido\",\n        \"cliente\": \n            {\n                \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n                \"usuario\": \"v.escobar1\",\n                \"contraseña\": \"d830vfd\",\n                \"correo\": \"v.escobar1@uniandes.edu.co\",\n                \"perfilAdquisitivo\": 100.67,\n                \"saldo\": 250.000\n            },\n        \"establecimiento\":\n            {\n                \"id\": \"48a9ab90-1276-11ed-861d-0242ac120004\",\n                \"nombre\": \"Doña Blanca\",\n                \"direccion\": \"Carrera 2 #2A-49\",\n                \"capacidad\": 20,\n                \"costoPromedio\": 15000,\n                \"calificacionPromedio\": 3.5\n            }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get One Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8006cdd6-08a1-427c-8829-8384032ebb37",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "bafee81f-e85b-4bc6-81db-6b41108b97dd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/resenias/{{resenia_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"resenias",
+						"{{resenia_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c29bb303-c204-4616-a632-a7147248de05",
+					"name": "Get One Reseña",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reseñas{{reseña_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reseñas{{reseña_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab22-1276-11ed-861d-0242ac120002\",\n    \"tipo\": \"Queja\",\n    \"descripcion\": \"La comida servida no contaba con lo pedido\",\n    \"cliente\": {\n        \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\n        \"usuario\": \"e.stiven2\",\n        \"contraseña\": \"d83ksds\",\n        \"correo\": \"e.stiven2@uniandes.edu.co\",\n        \"perfilAdquisitivo\": 102.22,\n        \"saldo\": 50000\n    },\n    \"establecimiento\": {\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n        \"nombre\": \"One Burito\",\n        \"direccion\": \"Calle 21 #2A-49\",\n        \"capacidad\": 5,\n        \"costoPromedio\": 20000,\n        \"calificacionPromedio\": 4.5\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d8b0666-5ac0-4960-9860-5df2fc700bc4",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The resenia with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1504f6f6-0f34-4e16-b088-0e3d80feccfe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/resenias/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"resenias",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3cdb72ea-44a6-46c9-b0a1-40b1fa4b574e",
+					"name": "Get Invalid Reseña",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reseñas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reseñas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"La reseña con el id dado no fue encontrada\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1733d234-873c-47a6-9c90-854863806e02",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "6ed668af-9c97-4949-bf56-6b8aa7c86142",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Reclamo\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"{{cliente_id}}\"\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"{{establecimiento_id}}\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/resenias/{{resenia_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"resenias",
+						"{{resenia_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "bdaf97fe-94e7-4d95-a034-338ab97ba353",
+					"name": "Update Reseña",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"Reclamo\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n            \"usuario\": \"e.stiven2\",\r\n            \"contraseña\": \"d83ksds\",\r\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 102.22,\r\n            \"saldo\": 50000\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reseñas/{{reseña_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reseñas",
+								"{{reseña_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab22-1276-11ed-861d-0242ac120002\",\n    \"tipo\": \"Reclamo\",\n    \"descripcion\": \"La comida servida no contaba con lo pedido\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8f35fa0f-5c40-4084-a608-3b33ca4db830",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The resenia with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "d89c6c9d-8a57-49d4-beca-492c076c17ea",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Reclamo\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"{{cliente_id}}\"\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"{{establecimiento_id}}\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/resenias/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"resenias",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a23b8a3f-f60c-4592-8de7-f6f29eed57ca",
+					"name": "Update Invalid Reseña",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reseñas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reseñas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reseña con el id dado no fue encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e349fd28-288d-427d-a007-e2cff14ebf20",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e1bb640a-9ff8-4b24-b5ec-0fd876231000",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/resenias/{{resenia_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"resenias",
+						"{{resenia_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "06fb8be0-bdaa-407c-81dd-27a7ffd1a3db",
+					"name": "Delete Reseña",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reseñas{{reseña_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reseñas{{reseña_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Resenia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d0f3511-c141-4cfb-b15f-e71ddf1061bc",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The resenia with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "790537cb-2c5f-4151-a284-b9b029c26040",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/resenias/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"resenias",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a98872b4-6137-4d27-9dd9-fb8c091d8de3",
+					"name": "Delete Invalid Reseña",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reseñas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reseñas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reseña con el id dado no fue encontrada\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a8d6fb8c-401b-44d7-930d-bde780a297e0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4c7a43b6-9dc4-4ad6-bd16-fc9b6422a778",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "052b44a0-f61d-4459-a8f2-0137d16c7e15",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "e8c738aa-1e90-42a3-9da5-bd23a7865332",
+			"key": "resenia_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "783c7d3a-327d-4053-ac8f-76701d98348b",
+			"key": "cliente_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "1f8f8f4d-cc65-4390-a8c3-a16d476eb7c1",
+			"key": "admin_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "da81e7ea-8910-4a24-aa79-54955d11515e",
+			"key": "establecimiento_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "06585f44-158a-45bc-9e77-e815763a2957",
+			"key": "token_read",
+			"value": ""
+		},
+		{
+			"id": "472db0ff-c1ce-46b8-8c7f-bb1f5a41c307",
+			"key": "token_write",
+			"value": ""
+		},
+		{
+			"id": "b2ec1f19-f099-4a46-b663-f80fe5b92bec",
+			"key": "token_delete",
+			"value": ""
+		},
+		{
+			"id": "8bb5b754-162b-4d7a-8a9a-254984618e41",
+			"key": "AdminEst_token_write",
+			"value": ""
+		},
+		{
+			"id": "4a9b845c-1a56-40c5-bc2c-5858545bfcaf",
+			"key": "establecimiento_token_write",
+			"value": ""
+		},
+		{
+			"id": "fe7e4023-01ff-4e5d-aa49-f0640440247e",
+			"key": "cliente_token_write",
+			"value": ""
+		}
+	]
+}

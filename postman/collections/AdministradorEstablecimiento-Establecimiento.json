@@ -1,0 +1,1687 @@
+{
+	"info": {
+		"_postman_id": "67e8c225-f45e-4443-8648-0c6462452bd5",
+		"name": "AdministradorEstablecimiento-Establecimiento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "17257891-67e8c225-f45e-4443-8648-0c6462452bd5"
+	},
+	"item": [
+		{
+			"name": "Add Establecimiento id1",
+			"item": [
+				{
+					"name": "Add AdministradorEstablecimiento",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"administradorEstablecimiento_id\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "ec16fbf4-48ad-4248-89ac-43de86d93b3b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Juan Jose\",\r\n    \"apellido\": \"Valencia\",\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "4d530697-751e-4b0c-9263-e88ed2727a8e",
+							"name": "Add AdministradorEstablecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/administradorEstablecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"administradorEstablecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Establecimiento id1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_id_1\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "385760d6-e1e1-4403-a3dd-4845e64597f9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4,\r\n    \"adminEst\": {\r\n        \"id\": \"{{administradorEstablecimiento_id}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "36d86bc6-4f2b-4993-bbab-54b657c8a3ef",
+							"name": "Add an establecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/establecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"establecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+						}
+					]
+				}
+			],
+			"id": "be53f98d-b992-4757-b2a7-d17cd137ecf1"
+		},
+		{
+			"name": "Add Establecimiento id2",
+			"item": [
+				{
+					"name": "Add AdministradorEstablecimiento id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"administradorEstablecimiento_id_2\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "df50f95c-3097-45fe-b658-91ac31045de6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"j.mendezm\",\r\n    \"nombre\": \"Julian Andres\",\r\n    \"apellido\": \"Mendez Melo\",\r\n    \"contraseña\": \"uniandes\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "221d51a4-69a2-42f0-a939-081777577412",
+							"name": "Add AdministradorEstablecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/administradorEstablecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"administradorEstablecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Establecimiento id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_id_2\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "59bffcc4-b3f4-4ffa-b2e0-3faf96cb1857",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"dona blanca\",\r\n    \"direccion\":\"Cl. 19 Bis #1-80\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":15000,\r\n    \"calificacionPromedio\":3,\r\n    \"adminEst\": {\r\n        \"id\": \"{{administradorEstablecimiento_id_2}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f519de38-7fd9-4efc-83ee-b1fb355237f5",
+							"name": "Add an establecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/establecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"establecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+						}
+					]
+				}
+			],
+			"id": "0aa2db1b-3ac1-4994-8e81-83c871e1a3d2"
+		},
+		{
+			"name": "Add Establecimiento to AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6146bc47-18f6-4108-b33d-43da366d2f1d",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "50fc3a81-0f08-44f9-ab7f-813c206a65a9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "27bace93-8f5a-4489-91e7-7f3b6049484f",
+					"name": "Add Establecimiento to AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\",\n    \"establecimientos\": [\n        {\n            \"id\": \"16f05d0e-1275-234d-861d-0242dc212141\",\n            \"nombre\": \"Carnal\",\n            \"direccion\": \"Calle 19 #2A-10\",\n            \"capacidad\": 20,\n            \"costoPromedio\": 20000,\n            \"calificacionPromedio\": 5\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Invalid Establecimiento to AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "09b091af-6545-49b8-ac22-527e0909ab6b",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3cf0641b-03ec-48b3-9e1c-aba998b630da",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4940b72c-10a3-4b14-9304-530bb8a6cee8",
+					"name": "Add Invalid Establecimiento to AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Establecimiento to Invalid AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c207e214-37e6-496c-b300-010e3105fcee",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The administradorEstablecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "fd03278f-f41e-48ee-9b1f-b3306bf2c7a7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "82e43c05-6433-4344-b884-a6a38b34eb93",
+					"name": "Add Establecimiento to Invalid AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El administrador de establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Establecimiento of AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "53b517a2-2f7a-4b57-94a9-f1d57cd18cff",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "369ae472-20a5-47e3-9c99-1e87e7e3e009",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "09a67311-76a3-4d92-a343-2623b5321bce",
+					"name": "Get Establecimiento of AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-234d-861d-0242dc212141\",\n    \"nombre\": \"Carnal\",\n    \"direccion\": \"Calle 19 #2A-10\",\n    \"capacidad\": 20,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 5\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Establecimiento of AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dfb6491e-042e-498e-8ac2-88bcea5f7789",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c38ce593-4a98-4f2c-9705-c3f32e43afd7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3a9141ab-5f15-4b0e-a5ca-e209344d36ca",
+					"name": "Get Invalid Establecimiento of AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Establecimiento of Invalid AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "378649a1-055f-4913-89a4-a2978a910841",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The administradorEstablecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "6b17e3dd-a9fa-4858-937b-27ca9a35e1db",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0bede21e-38e1-4347-95ac-d67657b9439f",
+					"name": "Get Establecimiento of Invalid AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El administrador de establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Establecimiento Non-Associated to AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e9400b09-59d7-41f3-8ff8-69545feb7a8a",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id is not associated to the administradorEstablecimiento\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "50eb5e4a-be55-4a9f-8ab3-6be48f8b2128",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos",
+						"{{establecimiento_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d3fb4fd1-f31b-4274-b7a2-a62b2bccda7d",
+					"name": "Get Establecimiento Non-Associated to AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos",
+								"{{establecimiento_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El establecimiento con el id dado no está asociado a un administrador de establecimiento\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Establecimientos of AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e8864791-7117-4705-a974-8fa960bb4523",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "12eecc39-d374-44db-8996-5b7e467f871c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "49c26381-3966-423b-b1a1-e732cbce671f",
+					"name": "Get All Establecimientos of AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242dc212141\",\n        \"nombre\": \"Carnal\",\n        \"direccion\": \"Calle 19 #2A-10\",\n        \"capacidad\": 20,\n        \"costoPromedio\": 20000,\n        \"calificacionPromedio\": 5\n    },\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242d2312141\",\n        \"nombre\": \"Doña blanca\",\n        \"direccion\": \"Calle 20 #2A-22\",\n        \"capacidad\": 10,\n        \"costoPromedio\": 10000,\n        \"calificacionPromedio\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get All Establecimientos of Invalid AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25424c9f-e2ac-47e0-bdd1-f9adac362f29",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The administradorEstablecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b53bde95-37ee-435b-aa10-8330f67744ac",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0bdd31a3-c6dc-4acf-935b-19781d2cd176",
+					"name": "Get All Establecimientos of Invalid AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El administrador de establecimiento con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Establecimientos of AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78c83925-b447-43df-a167-87eac0d83d65",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "85aecf08-b8b8-47c7-83c2-f2f98c772894",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c12e6074-8299-49b3-a7c7-42931dddb4ba",
+					"name": "Update Establecimientos of AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\",\n    \"establecimientos\": [\n        {\n            \"id\": \"16f05d0e-1275-234d-dhs8-0242dc212141\",\n            \"nombre\": \"La pola\",\n            \"direccion\": \"Calle 17 #2-10\",\n            \"capacidad\": 10,\n            \"costoPromedio\": 5000,\n            \"calificacionPromedio\": 4.8\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Establecimientos of AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9d7d7628-d745-44a6-82ba-5aef4607acad",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "abf5930f-eadc-4602-951a-45052c60a06d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "28ec990a-476d-45c2-b1bb-44a302627b24",
+					"name": "Update Invalid Establecimientos of AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Establecimientos of Invalid AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "23a39110-b546-4b23-bbb4-e4a1dd4728a9",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The administradorEstablecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1d8e55ef-77ef-460c-8453-de679cd81d54",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3dd4a540-2951-4b58-8a90-0fa80f4c48ce",
+					"name": "Update Establecimientos of Invalid AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El administrador de establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Establecimiento of AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2120e4c5-efac-4610-8a93-facdcc4b3a84",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "fb3644bc-7cb9-4b50-96f8-0dde58211703",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos",
+						"{{establecimiento_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "1e282003-b536-4335-9094-dbf98f962139",
+					"name": "Delete Establecimiento of AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos",
+								"{{establecimiento_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Establecimiento of Invalid AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4dec36d0-f339-4fd7-8fef-078e3087172c",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The administradorEstablecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "28ac1477-b219-430a-9e7c-d2d5f2fdefe9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos",
+						"{{establecimiento_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "10642c1e-695d-4e04-aaa0-d5edfcd1a155",
+					"name": "Delete Establecimiento of Invalid AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos",
+								"{{establecimiento_id_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El administrador de establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Establecimiento of AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc6fb99b-b8f1-4575-92ba-02efbe80163d",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "7a1a93ee-3a5b-4d40-84c8-327715ae01e8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3d683bf8-3afe-4540-815c-c9336f2b1b76",
+					"name": "Delete Invalid Establecimiento of AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Establecimiento Non-Associated to AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c21f60b6-e97e-4663-9e00-8f8a1645a06a",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id is not associated to the administradorEstablecimiento\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "09c49f66-d439-435b-8e11-6503aca9102f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "756e5e29-0c50-4ad3-bab5-494fc68cdb9d",
+					"name": "Delete Establecimiento Non-Associated to AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 412,\r\n    \"message\": \"El establecimiento con el id dado no está asociado a un administrador de establecimiento\"\r\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "49eac919-b77a-41c7-a867-4a41227c1e52",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "42284e65-57a4-4d88-9708-c58ce68978ae",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "485946b3-d2da-410a-a7be-b8a027fe7b46",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "736be0f7-efd8-4add-8623-a649cc02c1a3",
+			"key": "administradorEstablecimiento_id",
+			"value": ""
+		},
+		{
+			"id": "1b5a8192-c409-436e-859a-23fda3259c6a",
+			"key": "establecimiento_id_1",
+			"value": ""
+		},
+		{
+			"id": "9edd5168-d0e5-4898-b7db-ea9b29b16691",
+			"key": "administradorEstablecimiento_id_2",
+			"value": ""
+		},
+		{
+			"id": "3fe786cb-d48d-4753-b0a3-8b6bd2bb52d7",
+			"key": "establecimiento_id_2",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,2062 @@
+{
+	"info": {
+		"_postman_id": "97fe0a35-d238-4b24-a316-6888b4a6325a",
+		"name": "Cliente-Resenia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25914512-97fe0a35-d238-4b24-a316-6888b4a6325a"
+	},
+	"item": [
+		{
+			"name": "Add Resenia id1",
+			"item": [
+				{
+					"name": "Add AdministradorEstablecimiento id1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"administradorEstablecimiento_id_1\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c59578f4-aea1-42f0-802c-7e17ca319ad7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Juan Jose\",\r\n    \"apellido\": \"Valencia\",\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1e782627-5492-42d9-84e8-44201eadf2a9",
+							"name": "Add AdministradorEstablecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/administradorEstablecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"administradorEstablecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Establecimiento id1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_id_1\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3ae2f8f6-9293-4ced-863c-fe425a7ca5b9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4,\r\n    \"adminEst\": {\r\n        \"id\": \"{{administradorEstablecimiento_id_1}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "aebdec45-0ff4-41e9-9976-4ad6f16d27eb",
+							"name": "Add an establecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/establecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"establecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c03ad82-0d80-4ec9-ba69-66dd2a7203a2",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"cliente_id\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "fd061a9a-92f8-4397-88d6-579150cf1349",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Valentina\",\r\n    \"apellido\": \"Escobar\",\r\n    \"usuario\": \"v.escobar1\",\r\n    \"contraseña\": \"d830vfd\",\r\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n    \"perfilAdquisitivo\": 100,\r\n    \"saldo\": 250000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "870f91e3-96be-438f-b1e9-e663fc863ad0",
+							"name": "Add Cliente",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"usuario\": \"v.escobar1\",\r\n   \"contraseña\": \"d830vfd\",\r\n   \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n   \"perfilAdquisitivo\": 100.67,\r\n   \"saldo\": 250.000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/clientes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Resenia id1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "161629fe-0f00-49b0-aee7-9a4d3698a852",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"resenia_id_1\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8c5696c4-3b73-4476-a57a-a7754da24bfa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"Queja\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\",\r\n    \"cliente\":{\r\n        \"id\": \"{{cliente_id}}\"\r\n    },\r\n    \"establecimiento\":{\r\n        \"id\": \"{{establecimiento_id_1}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/resenias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"resenias"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2409f9f3-41b6-4f20-95d0-5ca170f6c284",
+							"name": "Add Reseña",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tipo\": \"Queja\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n            \"usuario\": \"e.stiven2\",\r\n            \"contraseña\": \"d83ksds\",\r\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 102.22,\r\n            \"saldo\": 50000\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5\r\n        }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reseñas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reseñas"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"id\": \"48a9ab22-1276-11ed-861d-0242ac120002\",\r\n    \"tipo\": \"Queja\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\"\r\n}"
+						}
+					]
+				}
+			],
+			"id": "bb198365-0b03-44e2-b499-e4c486ef32da"
+		},
+		{
+			"name": "Add Resenia id2",
+			"item": [
+				{
+					"name": "Add AdministradorEstablecimiento id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"administradorEstablecimiento_id_2\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9ee44e13-6730-4935-a0a6-7351111c0553",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"j.mendezm\",\r\n    \"nombre\": \"Julian Andres\",\r\n    \"apellido\": \"Mendez Melo\",\r\n    \"contraseña\": \"uniandes\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1f8f0b5f-207e-4bdf-ae2a-0081ed057d8d",
+							"name": "Add AdministradorEstablecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/administradorEstablecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"administradorEstablecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Establecimiento id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_id_2\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "973515f1-0438-4908-985c-0bafb275658a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"dona blanca\",\r\n    \"direccion\":\"Cl. 19 Bis #1-80\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":15000,\r\n    \"calificacionPromedio\":3,\r\n    \"adminEst\": {\r\n        \"id\": \"{{administradorEstablecimiento_id_2}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "65dd1856-bb5a-40ef-a056-7ed69e26add8",
+							"name": "Add an establecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/establecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"establecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Cliente id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c03ad82-0d80-4ec9-ba69-66dd2a7203a2",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"cliente_id_2\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1b899704-4bdf-4d5a-ac50-6169f21bcd2e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Julian Andres\",\r\n    \"apellido\": \"Parra\",\r\n    \"usuario\": \"jj.parra\",\r\n    \"contraseña\": \"jauddds\",\r\n    \"correo\": \"jj.parra@uniandes.edu.co\",\r\n    \"perfilAdquisitivo\": 100,\r\n    \"saldo\": 250000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6ef3f06d-1988-4dfc-b279-a2a9b539f0ca",
+							"name": "Add Cliente",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"usuario\": \"v.escobar1\",\r\n   \"contraseña\": \"d830vfd\",\r\n   \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n   \"perfilAdquisitivo\": 100.67,\r\n   \"saldo\": 250.000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/clientes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clientes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Resenia id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "161629fe-0f00-49b0-aee7-9a4d3698a852",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"resenia_id_2\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4574cba9-c640-4de3-ade7-277f152a7d22",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"Queja\",\r\n    \"descripcion\": \"No recibi bebida\",\r\n    \"cliente\":{\r\n        \"id\": \"{{cliente_id_2}}\"\r\n    },\r\n    \"establecimiento\":{\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/resenias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"resenias"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "25da043e-1263-4273-8bca-a48be1e11ce2",
+							"name": "Add Reseña",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tipo\": \"Queja\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n            \"usuario\": \"e.stiven2\",\r\n            \"contraseña\": \"d83ksds\",\r\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 102.22,\r\n            \"saldo\": 50000\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5\r\n        }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reseñas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reseñas"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"id\": \"48a9ab22-1276-11ed-861d-0242ac120002\",\r\n    \"tipo\": \"Queja\",\r\n    \"descripcion\": \"La comida servida no contaba con lo pedido\"\r\n}"
+						}
+					]
+				}
+			],
+			"id": "9d6405c8-1b88-4664-a7b2-567b7d320124"
+		},
+		{
+			"name": "Add Resenia to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ba35160-d10c-4ef2-8406-ca5654a85c45",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3ef49aa1-1af7-4724-a73a-e79f867899e7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias",
+						"{{resenia_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "6d2b2450-e599-4316-ac6a-19b5cd926be9",
+					"name": "Add Resenia to Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias",
+								"{{resenia_id_1}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contrasenia\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250,\n    \"reservaAsignada\": [],\n    \"resenias\": [\n        {\n            \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\n            \"tipo\": \"Constructiva\",\n            \"descripcion\": \"Tener más mesas\"\n        }\n    ],\n    \"establecimientosFav\": [],\n    \"tagsCliente\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Invalid Resenia to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e2e8ce6-ebb5-40c2-9a3f-dfcde5a7e4e7",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The resenia with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "54c59d50-55d8-49dc-91d2-05c35ee343b5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4256927b-460d-4f80-b56a-e2043e3a2aff",
+					"name": "Add Invalid Resenia to Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La resenia con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Resenia to Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d351f0c9-63c7-49cd-bbfd-7f5cd63bd4dd",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9df177cb-2188-414a-86a6-418bf53555c5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias/{{resenia_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"resenias",
+						"{{resenia_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "8f4f5869-96fa-438d-9cd6-02cc1ad070b1",
+					"name": "Add Resenia to Invalid Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias/{{resenia_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"resenias",
+								"{{resenia_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Resenia of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1c74c3b-14e9-497b-bf6e-fc7efda41571",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "0a32eb06-ff2b-49d0-af00-fda155641c8a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias",
+						"{{resenia_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "ee3dd4dc-5cb9-4fa8-81b7-236cfc705f8a",
+					"name": "Get Resenia of Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias",
+								"{{resenia_id_1}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\n    \"tipo\": \"Constructiva\",\n    \"descripcion\": \"Tener más mesas\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Resenia of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "41184471-c384-4681-9caf-0c8aef3f5174",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The resenia with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "df913042-c3df-43e0-997f-bd074d211d79",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "aa68b2e3-7c48-44b5-99b3-0d29cf0f8cee",
+					"name": "Get Invalid Resenia of Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La resenia con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Resenia of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e5c61fb9-fb74-48e0-98e7-85b88c8b5abc",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "0f47ec1f-5c36-485b-95bb-63800d51044b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias/{{resenia_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"resenias",
+						"{{resenia_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "8154a7c4-6cec-417a-b0b6-e539ab7f7261",
+					"name": "Get Resenia of Invalid Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias/{{resenia_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"resenias",
+								"{{resenia_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Resenia Non-Associated to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c13242b-5d77-4ebc-96f4-a27c9ac6bb50",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The resenia with the given id is not associated to the cliente\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8baf8af4-9fcd-4e4b-a9ed-4b02ae9f45fb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias",
+						"{{resenia_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "1b7de5d4-3876-44e4-90e4-5c17e75afbbc",
+					"name": "Get Resenia Non-Associated to Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias",
+								"{{resenia_id_1}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"La resenia con el id dado no está asociado a un cliente\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Resenias of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b4332c2-23a9-464b-8912-d87c0d660a75",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "93634685-1042-40ac-acc0-594e94aba83a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "31d57597-eb9f-462a-a426-96981edb70b1",
+					"name": "Get All Resenias of Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\r\n        \"tipo\": \"Constructiva\",\r\n        \"descripcion\": \"Tener más mesas\"\r\n    },\r\n    {\r\n        \"id\": \"16f05d0e-1275-44ed-861d-0242dc212141\",\r\n        \"tipo\": \"Constructiva\",\r\n        \"descripcion\": \"Tener más cubiertos\"\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get All Resenias of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18c6e67d-7e67-41d9-913b-0a55df4b675e",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a4d0c483-14a4-40e6-bd28-652d24736975",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"resenias"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "19cbfc47-4e5c-4f4c-b8f3-b35c1821ce09",
+					"name": "Get All Resenias of Invalid Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"resenias"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Resenias of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "762f9488-9e1e-487f-b0e7-424cd0be32fb",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "71e0a921-474c-4657-a532-5188294ad85c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{resenia_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "f27ff065-ec9d-4ff8-828a-d464cfa4cf27",
+					"name": "Update Resenias of Cliente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{resenia_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contrasenia\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250.000,\n    \"resenias\": [\n        {\n            \"id\": \"16f05d0e-1275-44ed-dfr4-0242ac122141\",\n            \"tipo\": \"Constructiva\",\n            \"descripcion\": \"Tener más decoración\"\n        }\n    ],\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Resenias of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a591996e-20d2-4a3c-a3fd-60fa2c936bfa",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The resenia with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2f4b5c20-58a1-407f-a893-e04b7ba02f8e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "40dc2f40-ce93-4587-94e7-061cd756c83b",
+					"name": "Update Invalid Resenias of Client",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La resenia con id dado no fue encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Resenias of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fcfda433-7902-4efb-95c3-296169c8bcf1",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "f5f44069-fcdd-4bdc-b6c9-2051f499c35b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{resenia_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"resenias"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c9072d98-10e5-40a3-ab24-038dab3b3a0b",
+					"name": "Update Resenias of Invalid Cliente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{resenia_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"resenias"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Resenia of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "60351e6e-8eaa-4604-b020-75c88e99be3f",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "7ae66d1a-5926-4cfa-ad73-c55d06161a01",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias",
+						"{{resenia_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "7655f785-447e-4d01-814f-abd96a527b7e",
+					"name": "Delete Resenia of Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias",
+								"{{resenia_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete Resenia of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8926a328-315d-45c8-8685-530b4effc20a",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "67be67ee-62b4-430c-8a39-8ed8e6dd5b28",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias/{{resenia_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"resenias",
+						"{{resenia_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a9c28509-25ac-4dbb-9f09-f87652972e18",
+					"name": "Delete Resenia of Invalid Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/resenias/{{resenia_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"resenias",
+								"{{resenia_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Resenia of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "555da9f0-73c9-4c63-9aa4-0e147b258fcb",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The resenia with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "638d1e0c-4f61-414b-bf05-2cc14551eb90",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "36c061cf-b9e7-4dde-9863-827166c0f4d1",
+					"name": "Delete Invalid Resenia of Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La resenia con id dado no fue encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Resenia Non-Associeated to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6239c56e-d533-40e6-adbe-0e04567ffedb",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The resenia with the given id is not associated to the cliente\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8578a3eb-1036-4101-aa97-c86129104085",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"resenias",
+						"{{resenia_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "f0c7db63-0775-4b7b-92f3-e8699087f076",
+					"name": "Delete Resenia Non-Associeated to Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/resenias/{{resenia_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"resenias",
+								"{{resenia_id_1}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"La resenia con el id dado no está asociada a un cliente\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "12fa9885-712b-485a-806c-3b100862fe96",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3bfd46ee-81ab-45ab-84c9-59b66b87dfab",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "bcda3fbf-8035-42a8-8d03-9ea5a3f00b22",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "746babb6-57be-4b4a-a4c9-6b8ab29cefd1",
+			"key": "resenia_id_1",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "c5e1b8c7-d3a0-4fc1-aec6-893ba2009287",
+			"key": "resenia_id_2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "7c344b76-c5c3-44c0-9d03-f51f53e8c149",
+			"key": "cliente_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "99401dd3-3ade-491c-8ec4-c502c736f31d",
+			"key": "administradorEstablecimiento_id_1",
+			"value": ""
+		},
+		{
+			"id": "3f712c69-3905-4cfd-95e8-57e0fa3660dd",
+			"key": "administradorEstablecimiento_id_2",
+			"value": ""
+		},
+		{
+			"id": "421e09ba-e96f-4014-812e-de83b551654b",
+			"key": "establecimiento_id_1",
+			"value": ""
+		},
+		{
+			"id": "f0255550-ea2c-4093-8e06-d13b24a26862",
+			"key": "establecimiento_id_2",
+			"value": ""
+		},
+		{
+			"id": "5a68a88d-8ef4-458b-9992-ff4803847905",
+			"key": "cliente_id_2",
+			"value": ""
+		}
+	]
+}

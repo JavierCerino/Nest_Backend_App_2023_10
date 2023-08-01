@@ -1,0 +1,572 @@
+{
+	"info": {
+		"_postman_id": "b79f240e-63d6-49b3-ae8a-ca1105e23609",
+		"name": "Menu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "17257891-b79f240e-63d6-49b3-ae8a-ca1105e23609"
+	},
+	"item": [
+		{
+			"name": "Add Menu",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a42cbd3-7356-434b-b9d8-6593c23242c4",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"menu_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "f0cf2f04-8d79-47ca-af1c-6519c52684b6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Menu de almuerzo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/menus",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"menus"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e065703a-170f-4a80-9d9a-381aa9893aed",
+					"name": "Add Menu",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/menus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"menus"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\" : \"2i4bg0uhqoubf2f3hu\",\r\n   \"nombre\": \"Menu de postres\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Menus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "341de9f8-9374-4fb8-b663-176c6cb7550e",
+						"exec": [
+							"pm.test('Number of menus > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ff0eeaf6-3099-4a73-8bd1-610d7af564d7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/menus",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"menus"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b99ab81a-a4cc-4a68-94bb-67d98af974e0",
+					"name": "Get Menus",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/menus",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"menus"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n    \"id\" : \"2i4bg0uhqoubf2f3hu\"\r\n   \"nombre\": \"Menu de postres\"\r\n    },\r\n    {\r\n    \"id\" : \"iui1b3f97b1b3f9\"\r\n   \"nombre\": \"Menu de desayunos\"\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Menu",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2e406ad7-701d-4f90-8d99-a727c523961c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "df548a33-53cf-4dd5-8a76-120036226c71",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/menus/{{menu_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"menus",
+						"{{menu_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e78ec66f-4c12-4c45-9bb5-ec896535bacc",
+					"name": "Get Menu",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/menus/{{menu_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"menus",
+								"{{menu_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\" : \"2i4bg0uhqoubf2f3hu\"\r\n   \"nombre\": \"Menu de postres\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get invalid Menu",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ede24195-2ff0-4b28-8c1b-3a81b3d2bcc6",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Menu no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ba9afa0a-6e57-4aa5-8f8b-b601cae4aac8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/menus/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"menus",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b4813b39-6f25-45ad-a542-a21356d9ac17",
+					"name": "Get invalid Menu",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/menus/{{menu_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"menus",
+								"{{menu_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El menu con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Menu",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "098e8dc6-29a0-4e8f-82e6-8813aeeb1701",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "bc9c62f9-ee8c-4345-a597-0791f4cdd42b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Menu de postres\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/menus/{{menu_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"menus",
+						"{{menu_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "837c078f-7df7-4d41-8177-006c34cbc0f3",
+					"name": "Update Menu",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/menus/{{menu_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"menus",
+								"{{menu_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\" : \"2i4bg0uhqoubf2f3hu\"\r\n   \"nombre\": \"Menu de postres2\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update invalid Menu",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9caf40f0-7785-43c8-b457-a31133cb2135",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Menu no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b56296ee-69e1-4da4-b4e8-6e3502f55516",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Menu de postres\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/menus/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"menus",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "06723b0b-22dc-4950-92d6-0dde8b50cac1",
+					"name": "Update invalid  Menu",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/menus/{{menu_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"menus",
+								"{{menu_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El menu con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete menu",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "addd2784-2e01-43f6-b3a3-ece0bea75fe0",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "77f9497f-506f-40a7-b8c5-a2f3e8776248",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/menus/{{menu_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"menus",
+						"{{menu_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "f383720b-7cc2-47cb-948d-ad59e00c703b",
+					"name": "Delete menu",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/menus/{{menu_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"menus",
+								"{{menu_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete invalid menu",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cde54b4c-e2e2-4413-9aa6-6a0766e9c16f",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Menu no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5b544621-65bd-424c-984a-f8ecf899f55c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/menus/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"menus",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3402be2e-d1ec-4636-afac-278c4a8ff5e3",
+					"name": "Delete menu",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/menus/{{menu_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"menus",
+								"{{menu_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El menu con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b79d3508-9995-4617-80f4-874ed7b84109",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "922d0d9f-aa52-4c72-be59-c4a39e5dc71d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "4f902db2-5313-4673-ae81-4eb6a2fd0748",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "8f4364bd-348f-400a-8dbf-f1efe4f5fbda",
+			"key": "menu_id",
+			"value": ""
+		}
+	]
+}

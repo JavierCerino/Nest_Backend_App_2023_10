@@ -1,0 +1,1221 @@
+{
+	"info": {
+		"_postman_id": "1bd64a43-efdf-4fa0-ac1d-16bdda93d335",
+		"name": "Reserva",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25914512-1bd64a43-efdf-4fa0-ac1d-16bdda93d335"
+	},
+	"item": [
+		{
+			"name": "Tokens",
+			"item": [
+				{
+					"name": "Get Token AdminEst Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"AdminEst_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "756b5de0-d1e0-4812-acfa-a02df0dfec48",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"administradorEstablecimiento.write\",\r\n    \"password\": \"administradorEstablecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "51bd36b1-1324-4ff5-8b2a-0c149386e7a5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.write\",\r\n    \"password\": \"establecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Reserva Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_read\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1708ac3f-4187-4062-9cfa-e9e1d049f2d5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"reserva.read\",\r\n    \"password\": \"reservaRead\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Reserva Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0bcf60e2-e44f-4794-95c8-b0b67677b9dd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"reserva.write\",\r\n    \"password\": \"reservaWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Reserva Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b79d2556-3d79-435d-9be6-d5f71e082900",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"reserva.delete\",\r\n    \"password\": \"reservaDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "6a8684ae-c042-41bf-9431-284bbe379b0b"
+		},
+		{
+			"name": "Add AdministradorEstablecimiento Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"admin_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a3d2cd21-10bb-4c6c-9830-2fc4a859f829",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AdminEst_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan Jose\",\r\n    \"apellido\": \"Valencia\",\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "ae64bfa7-ef7b-421b-a94c-9beb7c7ad4ac",
+					"name": "Add AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an Establecimiento Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"establecimiento_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "47a1998e-f709-4fa5-87f5-5a070ea8ef8b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{establecimiento_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":5,\r\n    \"adminEst\": {\r\n        \"id\": \"{{admin_id}}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "db3c680d-fe3a-4eb3-84ea-d2b71ba50a76",
+					"name": "Add an establecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "93bc9129-cf75-4b7b-b840-4badc198ba0d",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"reserva_id\", data.id)\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "be34296b-0aa4-4d87-af7d-f1249dd236dc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": -1,\r\n    \"numPersonas\": 0,\r\n    \"tipo\": \"pick-up\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"{{establecimiento_id}}\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "08641339-6122-48cd-b6a6-b7e45fcbb3b0",
+					"name": "Add Reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": -1,\r\n    \"numPersonas\": 0,\r\n    \"tipo\": \"pick-up\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n            \"usuario\": \"e.stiven2\",\r\n            \"contraseña\": \"d83ksds\",\r\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 102.22,\r\n            \"saldo\": 50000\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5\r\n        },\r\n    \"productosReserva\":\r\n        [\r\n            {\r\n                \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n                \"nombre\": \"Pepsi\",\r\n                \"tipoProducto\": \"Bebida\",\r\n                \"precio\": \"3000\"\r\n            },\r\n            {\r\n                \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\r\n                \"nombre\": \"Huevos fritos\",\r\n                \"tipoProducto\": \"Desayuno\",\r\n                \"precio\": \"7000\"\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"fecha\": \"2023-02-16\",\n    \"mesaAsignada\": -1,\n    \"numPersonas\": 0,\n    \"tipo\": \"pick-up\",\n    \"descripcion\": \"Por favor sin ají\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Reservas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2bf04525-176e-4fac-954a-233dc9e60972",
+						"exec": [
+							"pm.test('Number of reservas > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "300ebd40-20b7-43cd-b178-a075fbc4eadb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "de444495-676d-4e38-b6e2-f908f0ad23f7",
+					"name": "Get Reservas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\r\n        \"fecha\": \"2023-02-16\",\r\n        \"mesaAsignada\": -1,\r\n        \"numPersonas\": 0,\r\n        \"tipo\": \"pick-up\",\r\n        \"descripcion\": \"Por favor sin ají\",\r\n        \"cliente\": \r\n            {\r\n                \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n                \"usuario\": \"e.stiven2\",\r\n                \"contraseña\": \"d83ksds\",\r\n                \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n                \"perfilAdquisitivo\": 102.22,\r\n                \"saldo\": 50000\r\n            },\r\n        \"establecimiento\":\r\n            {\r\n                \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n                \"nombre\": \"One Burito\",\r\n                \"direccion\": \"Calle 21 #2A-49\",\r\n                \"capacidad\": 5,\r\n                \"costoPromedio\": 20000,\r\n                \"calificacionPromedio\": 4.5\r\n            },\r\n        \"productosReserva\":\r\n            [\r\n                {\r\n                    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n                    \"nombre\": \"Pepsi\",\r\n                    \"tipoProducto\": \"Bebida\",\r\n                    \"precio\": \"3000\"\r\n                },\r\n                {\r\n                    \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\r\n                    \"nombre\": \"Huevos fritos\",\r\n                    \"tipoProducto\": \"Desayuno\",\r\n                    \"precio\": \"7000\"\r\n                }\r\n            ]\r\n    },\r\n    {\r\n        \"id\": \"27f04d0e-1275-11ed-861d-0242ac122201\",\r\n        \"fecha\": \"2023-02-16\",\r\n        \"mesaAsignada\": -1,\r\n        \"numPersonas\": 0,\r\n        \"tipo\": \"pick-up\",\r\n        \"descripcion\": \"Por favor con aji\",\r\n        \"cliente\": \r\n            {\r\n                \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\r\n                \"usuario\": \"v.escobar1\",\r\n                \"contraseña\": \"d830vfd\",\r\n                \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n                \"perfilAdquisitivo\": 100.67,\r\n                \"saldo\": 250.000\r\n            },\r\n        \"establecimiento\":\r\n            {\r\n                \"id\": \"48a9ab90-1276-11ed-861d-0242ac120004\",\r\n                \"nombre\": \"Doña Blanca\",\r\n                \"direccion\": \"Carrera 2 #2A-49\",\r\n                \"capacidad\": 20,\r\n                \"costoPromedio\": 15000,\r\n                \"calificacionPromedio\": 3.5\r\n            },\r\n        \"productosReserva\":\r\n            [\r\n                {\r\n                    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n                    \"nombre\": \"Pepsi\",\r\n                    \"tipoProducto\": \"Bebida\",\r\n                    \"precio\": \"3000\"\r\n                },\r\n                {\r\n                    \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\r\n                    \"nombre\": \"Huevos fritos\",\r\n                    \"tipoProducto\": \"Desayuno\",\r\n                    \"precio\": \"7000\"\r\n                }\r\n            ]\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get One Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0678edf5-298d-4704-bf7d-8ab9f930eb95",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "04f78743-5816-4f4b-afbb-1cc251173303",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "72de9b28-0900-4948-9b1d-87f5e4ed84d7",
+					"name": "Get One Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\n    \"fecha\": \"2023-02-16\",\n    \"mesaAsignada\": -1,\n    \"numPersonas\": 0,\n    \"tipo\": \"pick-up\",\n    \"descripcion\": \"Por favor sin ají\",\n    \"cliente\": {\n        \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\n        \"usuario\": \"e.stiven2\",\n        \"contraseña\": \"d83ksds\",\n        \"correo\": \"e.stiven2@uniandes.edu.co\",\n        \"perfilAdquisitivo\": 102.22,\n        \"saldo\": 50000\n    },\n    \"establecimiento\": {\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n        \"nombre\": \"One Burito\",\n        \"direccion\": \"Calle 21 #2A-49\",\n        \"capacidad\": 5,\n        \"costoPromedio\": 20000,\n        \"calificacionPromedio\": 4.5\n    },\n    \"productosReserva\": [\n        {\n            \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\n            \"nombre\": \"Pepsi\",\n            \"tipoProducto\": \"Bebida\",\n            \"precio\": \"3000\"\n        },\n        {\n            \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\n            \"nombre\": \"Huevos fritos\",\n            \"tipoProducto\": \"Desayuno\",\n            \"precio\": \"7000\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9458ca21-0f2a-4d2e-9de1-490400802d46",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a7c1e228-af36-4ce8-88b1-cad594fa0c3d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "2536c7ac-e41f-4037-9dbe-9a0dbeda65bf",
+					"name": "Get Invalid Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con el id dado no fue encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8e1d2975-f0b9-496e-a7c9-8e293804b39a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "075e8d52-2142-424a-bda7-d4ec9f5c6b31",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": 0,\r\n    \"numPersonas\": 1,\r\n    \"tipo\": \"on-site\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"{{establecimiento_id}}\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "32eb34d8-15d5-410f-bd98-c7d7bc32be6b",
+					"name": "Update Reserva",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": 0,\r\n    \"numPersonas\": 1,\r\n    \"tipo\": \"on-site\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n            \"usuario\": \"e.stiven2\",\r\n            \"contraseña\": \"d83ksds\",\r\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 102.22,\r\n            \"saldo\": 50000\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5\r\n        },\r\n    \"productosReserva\":\r\n        [\r\n            {\r\n                \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n                \"nombre\": \"Pepsi\",\r\n                \"tipoProducto\": \"Bebida\",\r\n                \"precio\": \"3000\"\r\n            },\r\n            {\r\n                \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\r\n                \"nombre\": \"Huevos fritos\",\r\n                \"tipoProducto\": \"Desayuno\",\r\n                \"precio\": \"7000\"\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": 0,\r\n    \"numPersonas\": 1,\r\n    \"tipo\": \"on-site\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n            \"usuario\": \"e.stiven2\",\r\n            \"contraseña\": \"d83ksds\",\r\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 102.22,\r\n            \"saldo\": 50000\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5\r\n        },\r\n    \"productosReserva\":\r\n        [\r\n            {\r\n                \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n                \"nombre\": \"Pepsi\",\r\n                \"tipoProducto\": \"Bebida\",\r\n                \"precio\": \"3000\"\r\n            },\r\n            {\r\n                \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\r\n                \"nombre\": \"Huevos fritos\",\r\n                \"tipoProducto\": \"Desayuno\",\r\n                \"precio\": \"7000\"\r\n            }\r\n        ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b43b0456-ecd3-4dd1-8545-a484feb9d243",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "96189632-3938-43b3-95dd-111e5424cb20",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": 0,\r\n    \"numPersonas\": 1,\r\n    \"tipo\": \"on-site\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"{{establecimiento_id}}\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "592699e8-06a2-428f-99be-6aea9491201f",
+					"name": "Update Invalid Reserva",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"fecha\": \"2023-02-13\",\r\n   \"mesaAsignada\": -1,\r\n   \"numPersonas\": 0,\r\n   \"tipo\": \"pick-up\",\r\n   \"descripcion\": \"Por favor con ají\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con el id dado no fue encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "63240887-a82e-424c-8a3a-741f2a951330",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "485c1695-269f-427c-b94a-ce94ce0ba6e0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "48190af4-159d-4fd4-9f66-cadf488ba188",
+					"name": "Delete Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "521c18b4-9e9f-419a-91fa-d923bf25a75e",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "56c7d9cf-133e-47dd-951c-9717aeb48b5f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "53da7832-82e9-4b0b-a8bb-ca27835607ec",
+					"name": "Delete Invalid Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"La reserva con el id dado no fue encontrada\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b0ccb3bd-429f-4207-91a3-1927327d0d1d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4ec33d55-b66b-424f-a9ad-66bbbc88fb0c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "20ed5daa-e305-49c0-94c5-a40de65bbd14",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "aa2ef112-8264-4edc-8938-214d06a1f072",
+			"key": "reserva_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "4751603b-c3b9-454d-92a3-43499d00a7a5",
+			"key": "establecimiento_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "3edf1ef1-53b4-481b-ad50-61b0aa0a2ddd",
+			"key": "admin_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "6ef9fe21-833b-4a08-b2ac-218e6efcfc4a",
+			"key": "token_read",
+			"value": ""
+		},
+		{
+			"id": "78fe25a9-11a9-465e-a64a-6efe22697ed6",
+			"key": "token_write",
+			"value": ""
+		},
+		{
+			"id": "3e52200c-08da-421d-b72c-ed3556e7b60e",
+			"key": "AdminEst_token_write",
+			"value": ""
+		},
+		{
+			"id": "74f420c1-a3ff-483e-8736-64965c9f298c",
+			"key": "establecimiento_token_write",
+			"value": ""
+		},
+		{
+			"id": "8d9e7a3b-28c6-4d8f-8dc5-5c795220d3c1",
+			"key": "token_delete",
+			"value": ""
+		}
+	]
+}

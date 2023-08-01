@@ -1,0 +1,601 @@
+{
+	"info": {
+		"_postman_id": "429c2922-801a-4872-91ca-203c329df6d0",
+		"name": "Usuario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "17257891-429c2922-801a-4872-91ca-203c329df6d0"
+	},
+	"item": [
+		{
+			"name": "Add Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a44d6fc5-a6e1-40fc-b7d3-c05c31d71975",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.globals.set(\"usuario_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "fbc5ff81-c852-4036-89cf-b3835076f7c8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"j.mendezm\",\r\n    \"nombre\": \"Julián Andrés\",\r\n    \"apellido\": \"Méndez Melo\",\r\n    \"contraseña\": \"uNiandes201902\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/usuarios",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "82f53f88-2a15-4880-a7ed-48941262f1e0",
+					"name": "Add Usuario",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"j.mendezm\",\r\n    \"contraseña\": \"uNiandes201902\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"14f05d0e-1275-11ed-861d-0242ac120001\",\r\n    \"usuario\": \"j.mendezm\",\r\n    \"contraseña\": \"uNiandes201902\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Usuarios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95e3eb63-61a1-4572-ba01-35eae5cdc212",
+						"exec": [
+							"pm.test('Number of museums > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "848e15e2-86f1-4c61-b6fd-99dd0dbee51a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/usuarios",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3a84221a-f7ab-4a73-aefb-1c68f272bf47",
+					"name": "Get All Usuarios",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"id\":\"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    },\r\n    {\r\n        \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"v.escobar1\",\r\n        \"contraseña\": \"d830vfd\",\r\n        \"correo\": \"v.escobar1@uniandes.edu.co\"\r\n    },\r\n    {\r\n        \"id\": \"14f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"j.mendezm\",\r\n        \"contraseña\": \"uNiandes201902\",\r\n        \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get One Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2adb5854-3574-410b-9fa1-464e18a1b834",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1ee0ecb4-9378-4c4f-b6f5-9a5e9a06ac98",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"usuarios",
+						"{{usuario_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c07ea70b-b5c0-4bad-ac9d-ab7dc2472ab2",
+					"name": "Get One Usuario",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"{{usuario_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\":\"11f83d0e-1275-11ed-861d-0242ac120001\",\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "32217ac9-9b45-461d-98ee-f6df02768a07",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The usuario with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "cef44e28-177f-4357-9d0c-b29def4f94d5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/usuarios/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"usuarios",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3709d843-606f-4097-9df8-4f60c72eb81d",
+					"name": "Get Invalid Usuario",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El usuario con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a0e37d4b-324d-45b2-9276-d2777538eac7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "99c49710-d95a-44fb-b53a-bf180c6ce2aa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"j.mendezm\",\r\n    \"nombre\": \"Julián Andrés\",\r\n    \"apellido\": \"Méndez Melo\",\r\n    \"contraseña\": \"xdjus (nueva contrasena)\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"usuarios",
+						"{{usuario_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "93a67ae8-0ea9-4a7c-bc40-e57524c808fe",
+					"name": "Update Usuario",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"j.mendezm\",\r\n    \"contraseña\": \"xLrdstDs (nueva contraseña)\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"{{usuario_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"14f05d0e-1275-11ed-861d-0242ac120001\",\r\n    \"usuario\": \"j.mendezm\",\r\n    \"contraseña\": \"xLrdstDs (nueva contraseña)\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "486d19b3-8522-4053-b53b-2142a1a53a7d",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The usuario with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5e56a649-3a9f-4827-a59f-68310ec24cb6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"j.mendezm\",\r\n    \"nombre\": \"Julián Andrés\",\r\n    \"apellido\": \"Méndez Melo\",\r\n    \"contraseña\": \"usjsks (nueva contrasena)\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/usuarios/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"usuarios",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d282db8e-ab27-4cd7-8e9a-4a5abbd68226",
+					"name": "Update Invalid Usuario",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"j.mendezm\",\r\n    \"contraseña\": \"xLrdstDs (nueva contraseña)\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El usuario con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e356af68-8772-4f8b-b477-80f7f7df6ee7",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4df99b91-725c-4400-9d11-942e742d311b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"usuarios",
+						"{{usuario_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c79d232c-e6ad-489b-83ee-ddd7f33a8da6",
+					"name": "Delete Usuario",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"{{usuario_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86f42d3d-61d9-46b5-b62b-c8fbbd8f1733",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The usuario with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "6b884b7b-005c-41fc-9eaa-f5f0261a7753",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/usuarios/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"usuarios",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "f3220cf6-6cfe-4d44-83f0-4e088599c1e0",
+					"name": "Delete Invalid Usuario",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El usuario con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7ffa985b-81dd-495a-bad3-f3e38d9a59f3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "aa3f4348-9963-4c80-912a-e2b3902f3f6d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "195d3968-ff78-4739-ad9a-8b6a72f6fa7f",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}

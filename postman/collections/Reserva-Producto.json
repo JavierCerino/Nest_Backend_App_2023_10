@@ -1,0 +1,2269 @@
+{
+	"info": {
+		"_postman_id": "02e6333c-546f-4213-948c-9acff1535018",
+		"name": "Reserva-Producto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25914512-02e6333c-546f-4213-948c-9acff1535018"
+	},
+	"item": [
+		{
+			"name": "Tokens",
+			"item": [
+				{
+					"name": "Get Token Producto Write Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"producto_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1e7db0ad-0962-4d39-b0cb-fe8054c2d538",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"producto.write\",\r\n    \"password\": \"productoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token AdminEst Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"AdminEst_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "82f0f7f9-1fb0-4bc4-b300-29e55ff1d172",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"administradorEstablecimiento.write\",\r\n    \"password\": \"administradorEstablecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "011f6df9-507f-4b5c-acc0-d8b0c8860aa6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.write\",\r\n    \"password\": \"establecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Reserva Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_read\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "87fbf1c8-18b0-40d5-ba73-9d078fefa160",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"reserva.read\",\r\n    \"password\": \"reservaRead\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Reserva Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "33de3688-2544-4acf-b873-7d26c6b190fc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"reserva.write\",\r\n    \"password\": \"reservaWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Reserva Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "fbc6c1a3-e300-4668-808f-a105fe44030c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"reserva.delete\",\r\n    \"password\": \"reservaDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "f8c14b93-4609-4901-887c-f03129ab4dfe"
+		},
+		{
+			"name": "Add AdministradorEstablecimiento Reserva Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"admin_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ad590faf-d3a8-405b-985a-0c21ac677362",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AdminEst_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan Jose\",\r\n    \"apellido\": \"Valencia\",\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "ffeb3a52-bb1f-4c3f-93d0-7755f5ee3dd3",
+					"name": "Add AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an Establecimiento Reserva Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"establecimiento_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "325c9632-d73e-4b8f-9f36-23bd3252a6df",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{establecimiento_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":5,\r\n    \"adminEst\": {\r\n        \"id\": \"{{admin_id}}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "18cc4908-7a03-495a-b9ca-ae1f82f0502b",
+					"name": "Add an establecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Producto Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12f2b1d4-18bb-4d48-a3f9-d45fc2ba4390",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"product_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "dd6f57ec-a43f-44e9-94c4-c77611d40ddf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{producto_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": 3000    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "13ab659a-2a82-4f31-9e91-6ecb5552275a",
+					"name": "Add Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{        \r\n        \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": \"3000\"    \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Producto Reserva (No associated)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "93edaf60-a4b4-4626-a890-ac83ee43584e",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"product_id2\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "22cb684b-3455-4f36-9aee-a2b1b96527b5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{producto_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"CocaCola\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": 2500    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "903bae70-a0ad-4928-81ba-1c4eafbdebe5",
+					"name": "Add Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{        \r\n        \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n        \"nombre\": \"CocaCola\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": \"2500\"      \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "93bc9129-cf75-4b7b-b840-4badc198ba0d",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"reserva_id\", data.id)\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "dcc5d930-b5b0-4720-b070-674c2ad62c55",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": -1,\r\n    \"numPersonas\": 0,\r\n    \"tipo\": \"pick-up\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"{{establecimiento_id}}\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "336b36b6-078a-4b47-aec0-0289a541eb2e",
+					"name": "Add Reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": -1,\r\n    \"numPersonas\": 0,\r\n    \"tipo\": \"pick-up\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n            \"usuario\": \"e.stiven2\",\r\n            \"contraseña\": \"d83ksds\",\r\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 102.22,\r\n            \"saldo\": 50000\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5\r\n        },\r\n    \"productosReserva\":\r\n        [\r\n            {\r\n                \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n                \"nombre\": \"Pepsi\",\r\n                \"tipoProducto\": \"Bebida\",\r\n                \"precio\": \"3000\"\r\n            },\r\n            {\r\n                \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\r\n                \"nombre\": \"Huevos fritos\",\r\n                \"tipoProducto\": \"Desayuno\",\r\n                \"precio\": \"7000\"\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"fecha\": \"2023-02-16\",\n    \"mesaAsignada\": -1,\n    \"numPersonas\": 0,\n    \"tipo\": \"pick-up\",\n    \"descripcion\": \"Por favor sin ají\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Producto to Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6b38d476-8584-460d-bd68-5a468e7cc85d",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ac38401d-85e8-45d1-bfbd-f5206d9e6312",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos",
+						"{{product_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "48b628fc-1e45-4f5e-8519-9c9d93ee52ea",
+					"name": "Add Producto to Reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos",
+								"{{product_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\n    \"fecha\": \"2023-02-16\",\n    \"mesaAsignada\": -1,\n    \"numPersonas\": 0,\n    \"tipo\": \"pick-up\",\n    \"descripcion\": \"Por favor sin ají\",\n    \"cliente\": \n        {\n\n        },\n    \"establecimiento\":\n        {\n\n        },\n    \"productosReserva\":\n        [\n            {\n                \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\n                \"nombre\": \"Pepsi\",\n                \"tipoProducto\": \"Bebida\",\n                \"precio\": \"3000\"\n            }\n        ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Invalid Producto to Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1e46ac9-6d57-400a-af43-d55e972f2e46",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The producto with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "93a19a9e-d8b2-40c9-8273-e1738b450cde",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d6cb1629-ff67-43bf-9ac2-44cd6e85b0f1",
+					"name": "Add Invalid Producto to Reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El producto con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Producto to Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1442cc01-b6cc-49a7-ac28-7693cc19c2f0",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "97d4525e-b601-44fa-a5eb-ecee53b3a6d4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos/{{product_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos",
+						"{{product_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "bff37a22-be69-4a7d-8459-151fd77d5b12",
+					"name": "Add Producto to Invalid Reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos/{{product_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos",
+								"{{product_id}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con id dado no fue encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Producto of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96fb2bcb-a016-480f-86da-f988980b92c3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e9bc7b1c-b4c9-4403-9d1a-7b08cac4980d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos",
+						"{{product_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "be75eda2-162d-4173-a0d1-85331d067d79",
+					"name": "Get Producto of Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos",
+								"{{product_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\n    \"nombre\": \"Pepsi\",\n    \"tipoProducto\": \"Bebida\",\n    \"precio\": \"3000\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Producto of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9074129c-c70b-4d0a-b38d-b2e6ad530851",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The producto with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "92ba83a9-56e9-4464-84a0-97c935f6ae89",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "ba864aea-854c-4864-9e47-4602f1e31350",
+					"name": "Get Invalid Producto of Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El producto con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Producto of Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a7b2c16-4ac9-48f8-93a3-cce723d2b3d5",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "59d6f669-8caf-4318-8a8f-01196efe1753",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos/{{product_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos",
+						"{{product_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "dd2b544f-b568-4cb2-8a95-8b1312f057dc",
+					"name": "Get Producto of Invalid Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos/{{product_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos",
+								"{{product_id}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Producto Non-Associated to Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "daeb5765-6138-4375-b6d4-b92175c1be1f",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The producto with the given id is not associated to the reserva\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "33c47032-8820-4db5-96da-99d8ddcb3b68",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos",
+						"{{product_id2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "1dfca5ae-fcc6-4b33-9e3d-dfd2232bda39",
+					"name": "Get Producto Non-Associated to Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos",
+								"{{product_id2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 412,\r\n    \"message\": \"El producto con el id dado no está asociado a una reserva\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Productos of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f492c49c-cb5c-4dd0-b6c5-ca4febe66c65",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "7364e40f-4073-43f5-8f4d-0cf607e61f37",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d6fafc29-8a28-44d1-ad45-0a7d10c7f099",
+					"name": "Get All Establecimientos of Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{reserva_id}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{reserva_id}}",
+								"productos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242dc212141\",\n        \"nombre\": \"Carnal\",\n        \"direccion\": \"Calle 19 #2A-10\",\n        \"capacidad\": 20,\n        \"costoPromedio\": 20000,\n        \"calificacionPromedio\": 5\n    },\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242d2312141\",\n        \"nombre\": \"Doña blanca\",\n        \"direccion\": \"Calle 20 #2A-22\",\n        \"capacidad\": 10,\n        \"costoPromedio\": 10000,\n        \"calificacionPromedio\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get All Productos of Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3a84107-4356-40a1-b201-e14e89fce23d",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9c4bd07b-460a-4485-9033-9baea6b911cb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "5839dd48-c092-4fcd-b1ec-e1431d2d2377",
+					"name": "Get All Productos of Invalid Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Productos of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "16fb4d10-c768-44b3-8f6f-df16c189ea1d",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c7cae8e9-22f2-4c6d-9081-f5ff6c08c81f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{product_id2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4855312f-feab-4bfc-ba5c-4ce4615026bf",
+					"name": "Update Productos of Reserva",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{producto_id2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\n    \"fecha\": \"2023-02-16\",\n    \"mesaAsignada\": -1,\n    \"numPersonas\": 0,\n    \"tipo\": \"pick-up\",\n    \"descripcion\": \"Por favor sin ají\",\n    \"cliente\": \n        {\n\n        },\n    \"establecimiento\":\n        {\n\n        },\n    \"productosReserva\":\n        [\n            {\n                \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\n                \"nombre\": \"Pepsi\",\n                \"tipoProducto\": \"Bebida\",\n                \"precio\": \"3000\"\n            },\n            {\n                \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\n                \"nombre\": \"Huevos fritos\",\n                \"tipoProducto\": \"Desayuno\",\n                \"precio\": \"7000\"\n            }\n        ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Productos of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e879ab08-e896-493e-9c48-b7065e62b831",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The producto with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "027be483-214b-44b7-9ea4-16ceb2068b1b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "77a30936-ac9d-4e95-bc78-af4f469d25f4",
+					"name": "Update Invalid Productos of Reserva",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El producto con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Productos of Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "99da5836-d574-4d48-97c5-f592b9774358",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "cc1342ad-1b67-4aeb-b097-14371400a63e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "1330a7ab-c459-4954-95fc-5cef59e41c5f",
+					"name": "Update Productos of Invalid Reserva",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Producto of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c6e9c276-e978-4785-a8df-c577e0b22623",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "947050ea-7202-4f64-ac0e-bf172e5491ba",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos",
+						"{{product_id2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "461a6bf5-fbb7-48e3-a379-946f6f7af70a",
+					"name": "Delete Producto of Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos",
+								"{{product_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Producto of Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bedb8d3b-da52-471e-9a1e-a4ec9c0f228a",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "eb9d2944-573b-4ee6-8960-a9b360dbf358",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos/{{product_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos",
+						"{{product_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "fc036925-4e7c-4a30-941c-53c44a00ced7",
+					"name": "Delete Producto of Invalid Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos/{{product_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos",
+								"{{product_id}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Producto of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c715c6a9-438f-45dc-b09c-3ff5755306ac",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The producto with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8034dffd-92ac-4223-a479-7bfa6c6f7f39",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "5ab5558d-f2c7-4953-bc32-7fa14c514a77",
+					"name": "Delete Invalid Producto of Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El producto con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Producto Non-Associated to Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "399fac7a-ef87-49ee-913d-2b6d66b61196",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The producto with the given id is not associated to the reserva\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "7f92e501-a5a8-488e-873a-2c362e6af51d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"productos",
+						"{{product_id2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "9aee8fb5-a251-43b2-b15e-d68c9e5faa11",
+					"name": "Delete Producto Non-Associated to Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/productos/{{product_id2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"productos",
+								"{{product_id2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El producto con el id dado no está asociado a un cliente\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b3613e8f-683b-49fb-ac2d-19404e899f44",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "97527e15-1821-47aa-ae6c-bf752ecd0bf5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "823f22c5-dd28-413f-a834-36932572dc94",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "2425f60f-e482-4c41-aa5d-8ab0a2692625",
+			"key": "reserva_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "e651f4b3-81de-4dfa-a3e2-2848d5c5ae12",
+			"key": "admin_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "6ed5e1b1-3a13-4289-b40f-7372753552ab",
+			"key": "establecimiento_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "3ee6d457-ea7d-44ac-bbd1-ad2cfd8226d2",
+			"key": "product_id",
+			"value": ""
+		},
+		{
+			"id": "09b293f2-239b-4f2f-a5a0-dd145ea084e6",
+			"key": "product_id2",
+			"value": ""
+		},
+		{
+			"id": "3ad5fbdf-5959-4dfa-b467-407166ba6738",
+			"key": "cliente_token_write",
+			"value": ""
+		},
+		{
+			"id": "049c63b9-b881-41a7-b8ca-e4d2af1d4fbc",
+			"key": "producto_token_write",
+			"value": ""
+		},
+		{
+			"id": "e08dfe75-3dd8-47f1-8b1b-022d51375c87",
+			"key": "AdminEst_token_write",
+			"value": ""
+		},
+		{
+			"id": "7e29afcd-33b6-4433-8b80-78bc582873a6",
+			"key": "establecimiento_token_write",
+			"value": ""
+		},
+		{
+			"id": "2083d392-2423-479e-9952-2f517fb9c7ee",
+			"key": "token_read",
+			"value": ""
+		},
+		{
+			"id": "ff4962d2-4bab-413b-9a22-88b53f7dbb62",
+			"key": "token_write",
+			"value": ""
+		},
+		{
+			"id": "874d806e-1ad8-495e-a7d1-36671678e143",
+			"key": "token_delete",
+			"value": ""
+		}
+	]
+}

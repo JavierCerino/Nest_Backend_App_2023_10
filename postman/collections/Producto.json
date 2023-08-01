@@ -1,0 +1,558 @@
+{
+	"info": {
+		"_postman_id": "0c61997d-4ed6-4bf3-805a-7c5f312a3c00",
+		"name": "Producto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "17257891-0c61997d-4ed6-4bf3-805a-7c5f312a3c00"
+	},
+	"item": [
+		{
+			"name": "Add Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "765e4b37-fbc8-4a24-8b59-55b7dfec3840",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"producto_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "51578693-9789-4e9a-949c-855dd9902b4a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": 3000    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "692a2dd1-2ef1-4765-b060-2f03f24fb46f",
+					"name": "Add Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{        \r\n        \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": 3000   \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Productos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e3fd0835-5ae1-4d3f-8e6d-fb024ad940c3",
+						"exec": [
+							"pm.test('Number of menus > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b96e50f3-fb75-44ac-a7a7-7cd7db2470e1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "502987b9-86de-4c93-9396-b594fccbac47",
+					"name": "Get All Productos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "[    \r\n    {        \r\n        \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n        \"nombre\": \"Pepsi\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": \"3000\"    \r\n    },  \r\n     {        \r\n        \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\r\n        \"nombre\": \"Huevos fritos\",\r\n        \"tipoProducto\": \"Desayuno\",\r\n        \"precio\": \"7000\"    \r\n    }\r\n]\r\n"
+				}
+			]
+		},
+		{
+			"name": "Get Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c94f37f7-ba0f-43fc-8e75-e0a6cd01bd14",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5eef2622-f10d-4ff7-a8e3-d67092e9ae16",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "06a25041-db80-4eee-b941-974f03e56900",
+					"name": "Get Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{        \r\n        \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": \"3000\"    \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get invalid  Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c29dfb1-d509-469c-8070-be28d0d8491c",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Producto no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5c25290f-cf9c-4c26-8009-c9df703b30fb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "be62ee94-9a40-4e24-a90b-9407f67e0985",
+					"name": "Get invalid  Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El producto con el id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe0cc481-f0a8-48f9-9da3-c341abda304b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b15653c7-f1ba-4bba-b128-c2c3c1c16a92",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": 3500    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "37e62839-f56b-45ca-9046-d098c56d3544",
+					"name": "Update Producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{        \r\n        \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": \"3000\"    \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update invalid Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "39265ce1-0adf-4c5d-add9-8c3bf75ba2b9",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Producto no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a1ab3a41-e7c4-402a-b107-17d8b4672228",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": 3500    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d556179e-17f2-453d-a1b2-38ca7599298a",
+					"name": "Update invalid Producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El producto con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4c60e79a-b37f-4434-923a-da7ac90610e0",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8d6c170f-eee4-4117-9db3-2aea526b018b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "dd9f3fd8-98f9-4125-b4bf-062886ba34b5",
+					"name": "Delete Producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete invalid Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "17fe6e44-a989-459a-82c1-116066da4ae4",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Producto no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "79fa5a83-017f-4e31-abbd-5b61240041ef",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "585f6fd5-b635-453e-9fc4-3cf2a61832bc",
+					"name": "Delete invalid Producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El producto con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6b9ffdaa-2414-482d-bb3f-84415f36210e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8452cad9-908b-446d-99d4-668c6208b68d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f49c5996-af5a-4e87-9854-0cd2b87f5db2",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}

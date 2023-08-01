@@ -1,0 +1,835 @@
+{
+	"info": {
+		"_postman_id": "b5d4cab8-361a-4247-9701-a179e4d39b13",
+		"name": "Tag",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25914505"
+	},
+	"item": [
+		{
+			"name": "Tokens",
+			"item": [
+				{
+					"name": "Get Token Tag Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"tag.write\",\r\n    \"password\": \"tagWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Tag Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_read\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"tag.read\",\r\n    \"password\": \"tagRead\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Tag Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"tag.delete\",\r\n    \"password\": \"tagDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add a tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"tag_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"comida méxicana\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a tag",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"comida méxicana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n    \"Nombre\": \"comida méxicana\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all tags",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Number of museums > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all tags",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n        \"Nombre\": \"comida méxicana\",\n        \"clientes\":[\n            {\n                \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n                \"usuario\": \"v.escobar1\",\n                \"contraseña\": \"d830vfd\",\n                \"correo\": \"v.escobar1@uniandes.edu.co\",\n                \"perfilAdquisitivo\": 100.67,\n                \"saldo\": 250\n            }\n        ],\n        \"establecimientos\": [\n                {\n                \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n                \"nombre\": \"One Burito\",\n                \"direccion\": \"Calle 21 #2A-49\",\n                \"capacidad\": 5,\n                \"costoPromedio\": 20000,\n                \"calificacionPromedio\": 4.5,\n                \"clientes\":[\n                    {\n                        \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n                        \"usuario\": \"v.escobar1\",\n                        \"contraseña\": \"d830vfd\",\n                        \"correo\": \"v.escobar1@uniandes.edu.co\",\n                        \"perfilAdquisitivo\": 100.67,\n                        \"saldo\": 250\n                    }\n                ],\n                \"menus\":[\n                    {\n                        \"nombre\": \"Menu de postres\"\n                    }\n                ],\n                \"adminEst\": {\n                    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n                    \"usuario\": \"jj.valencia\",\n                    \"contraseña\": \"2490hssGxs\",\n                    \"correo\": \"jj.valencia@uniandes.edu.co\"\n                },\n                \"tagEstablecimiento\":[\n                    {\n                        \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n                        \"Nombre\": \"comida méxicana\"\n                    }\n                ],\n                \"promociones\":[\n                    {\n                        \"tipo\":\"Segunda Unidad a mitad de precio\",\n                        \"descripcion\":\"Lleve la segunda unidad a mitad de precio por compras superiores a 20000 pesos.\"\n                    }\n                ],\n                \"reseñas\": [\n                    {\n                        \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\n                        \"tipo\": \"Constructiva\",\n                        \"descripcion\": \"Tener más mesas\"\n                    }\n                ],\n                \"reservas\":[\n                        {\n                        \"id\": \"16f05d0e-1275-44ed-861d-0242ac120001\",\n                        \"fecha\": \"2023-03-16\",\n                        \"mesaAsignada\": 3,\n                        \"numPersonas\": 2,\n                        \"tipo\": \"premium\",\n                        \"descripcion\": \"Por favor sin ají\"\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n        \"Nombre\": \"comida casera\",\n        \"clientes\":[\n            {\n                \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n                \"usuario\": \"v.escobar1\",\n                \"contraseña\": \"d830vfd\",\n                \"correo\": \"v.escobar1@uniandes.edu.co\",\n                \"perfilAdquisitivo\": 100.67,\n                \"saldo\": 250\n            }\n        ],\n        \"establecimientos\": [\n            {\n                \"id\": \"48a9ab90-1276-11ed-861d-0242ac120004\",\n                \"nombre\": \"Doña Blanca\",\n                \"direccion\": \"Carrera 2 #2A-49\",\n                \"capacidad\": 20,\n                \"costoPromedio\": 15000,\n                \"calificacionPromedio\": 3.5,\n                \"clientes\":[\n                    {\n                        \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n                        \"usuario\": \"v.escobar1\",\n                        \"contraseña\": \"d830vfd\",\n                        \"correo\": \"v.escobar1@uniandes.edu.co\",\n                        \"perfilAdquisitivo\": 100.67,\n                        \"saldo\": 250\n                    }\n                ],\n                \"menus\":[\n                    {\n                    \"nombre\": \"Menu de postres\"\n                    }\n                ],\n                \"adminEst\":{\n                    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n                    \"usuario\": \"jj.valencia\",\n                    \"contraseña\": \"2490hssGxs\",\n                    \"correo\": \"jj.valencia@uniandes.edu.co\"\n                },\n                \"tagEstablecimiento\":[\n                    {\n                        \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n                        \"Nombre\": \"comida casera\"\n                    }\n                ],\n                \"promociones\":[\n                    {\n                        \"tipo\":\"Segunda Unidad a mitad de precio\",\n                        \"descripcion\":\"Lleve la segunda unidad a mitad de precio por compras de tamales\"\n                    }\n                ],\n                \"reseñas\": [\n                    {\n                        \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\n                        \"tipo\": \"Constructiva\",\n                        \"descripcion\": \"Tener más mesas\"\n                    }\n                ],\n                \"reservas\":[\n                        {\n                        \"id\": \"16f05d0e-1275-44ed-861d-0242ac120004\",\n                        \"fecha\": \"2023-03-16\",\n                        \"mesaAsignada\": 3,\n                        \"numPersonas\": 2,\n                        \"tipo\": \"premium\",\n                        \"descripcion\": \"Por favor sin maiz\"\n                    }\n                ]\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get one tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tags/{{tag_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags",
+						"{{tag_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get one tag",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tags/{{tag_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags",
+								"{{tag_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\r\n    \"Nombre\": \"comida méxicana\",\r\n    \"clientes\":[\r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\r\n            \"usuario\": \"v.escobar1\",\r\n            \"contraseña\": \"d830vfd\",\r\n            \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 100.67,\r\n            \"saldo\": 250\r\n        }\r\n    ],\r\n    \"establecimientos\": [\r\n            {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5,\r\n            \"clientes\":[\r\n                {\r\n                    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\r\n                    \"usuario\": \"v.escobar1\",\r\n                    \"contraseña\": \"d830vfd\",\r\n                    \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n                    \"perfilAdquisitivo\": 100.67,\r\n                    \"saldo\": 250\r\n                }\r\n            ],\r\n            \"menus\":[\r\n                {\r\n                    \"nombre\": \"Menu de postres\"\r\n                }\r\n            ],\r\n            \"adminEst\": {\r\n                \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n                \"usuario\": \"jj.valencia\",\r\n                \"contraseña\": \"2490hssGxs\",\r\n                \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n            },\r\n            \"tagEstablecimiento\":[\r\n                {\r\n                  \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\r\n                   \"Nombre\": \"comida méxicana\"\r\n                }\r\n            ],\r\n            \"promociones\":[\r\n                {\r\n                    \"tipo\":\"Segunda Unidad a mitad de precio\",\r\n                    \"descripcion\":\"Lleve la segunda unidad a mitad de precio por compras superiores a 20000 pesos.\"\r\n                }\r\n            ],\r\n            \"reseñas\": [\r\n                {\r\n                    \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\r\n                    \"tipo\": \"Constructiva\",\r\n                    \"descripcion\": \"Tener más mesas\"\r\n                }\r\n            ],\r\n            \"reservas\":[\r\n                {\r\n                    \"id\": \"16f05d0e-1275-44ed-861d-0242ac120001\",\r\n                    \"fecha\": \"2023-03-16\",\r\n                    \"mesaAsignada\": 3,\r\n                    \"numPersonas\": 2,\r\n                    \"tipo\": \"premium\",\r\n                    \"descripcion\": \"Por favor sin ají\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get an invalid tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el tag con el tagId: 00000000-0000-0000-0000-000000000000\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tags/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get an invalid tag",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tags/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El tag con el id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update a tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"comida méxicana picante (Nuevo Nombre)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tags/{{tag_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags",
+						"{{tag_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update a tag",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"comida méxicana picante (Nuevo Nombre)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tags/{{tag_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags",
+								"{{tag_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n    \"Nombre\": \"comida méxicana picante (Nuevo Nombre)\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update an invalid tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el tag con el tagId: 00000000-0000-0000-0000-000000000000\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Antioqueña\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tags/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an invalid tag",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tags/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El tag con el id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tags/{{tag_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags",
+						"{{tag_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete a tag",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tags/{{tag_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags",
+								"{{tag_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete an invalid tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el tag con el tagId: 00000000-0000-0000-0000-000000000000\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tags/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an invalid tag",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tags/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El tag con el id dado no fue encontrado\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "tag_id",
+			"value": ""
+		},
+		{
+			"key": "token_write",
+			"value": ""
+		},
+		{
+			"key": "token_read",
+			"value": ""
+		},
+		{
+			"key": "token_delete",
+			"value": ""
+		}
+	]
+}

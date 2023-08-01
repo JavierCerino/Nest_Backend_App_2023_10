@@ -1,0 +1,1779 @@
+{
+	"info": {
+		"_postman_id": "ae88a356-e35a-4884-8727-604fcdb8c9f6",
+		"name": "Cliente-Establecimiento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "17257891-ae88a356-e35a-4884-8727-604fcdb8c9f6"
+	},
+	"item": [
+		{
+			"name": "Add Establecimiento id1",
+			"item": [
+				{
+					"name": "Add AdministradorEstablecimiento id1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"administradorEstablecimiento_id_1\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "77a30393-31b2-4b2c-a35e-4c6282a1f82b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Juan Jose\",\r\n    \"apellido\": \"Valencia\",\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "b5fba8d7-84fe-4eac-b09e-aa69447560e5",
+							"name": "Add AdministradorEstablecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/administradorEstablecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"administradorEstablecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Establecimiento id1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_id_1\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "15de9de9-a059-482b-8587-e8ce929253a2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4,\r\n    \"adminEst\": {\r\n        \"id\": \"{{administradorEstablecimiento_id_1}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "39ee5c84-5a5f-44dd-bdf5-b9787d5f0913",
+							"name": "Add an establecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/establecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"establecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+						}
+					]
+				}
+			],
+			"id": "9147f9b1-72a8-4cc9-b04b-5aa80334d922"
+		},
+		{
+			"name": "Add Establecimiento id2",
+			"item": [
+				{
+					"name": "Add AdministradorEstablecimiento id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"administradorEstablecimiento_id_2\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "75d3d4fc-ab1b-4e66-abe1-cdff5615307b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"j.mendezm\",\r\n    \"nombre\": \"Julian Andres\",\r\n    \"apellido\": \"Mendez Melo\",\r\n    \"contraseña\": \"uniandes\",\r\n    \"correo\": \"j.mendezm@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "09f764bc-d34d-4063-84db-11f55b2737e3",
+							"name": "Add AdministradorEstablecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/administradorEstablecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"administradorEstablecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Establecimiento id2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_id_2\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "d4e1d91f-c002-4304-a95e-05949c36bd36",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"dona blanca\",\r\n    \"direccion\":\"Cl. 19 Bis #1-80\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":15000,\r\n    \"calificacionPromedio\":3,\r\n    \"adminEst\": {\r\n        \"id\": \"{{administradorEstablecimiento_id_2}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "7c1dcce6-a6c8-48e6-884d-de9ff2de082c",
+							"name": "Add an establecimiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/establecimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"establecimientos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+						}
+					]
+				}
+			],
+			"id": "46137663-bbae-4aca-9360-e9ecb15057c7"
+		},
+		{
+			"name": "Add Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9c03ad82-0d80-4ec9-ba69-66dd2a7203a2",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"cliente_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "518e586c-e297-4c9a-9f3f-2450a50f4c7d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Valentina\",\r\n    \"apellido\": \"Escobar\",\r\n    \"usuario\": \"v.escobar1\",\r\n    \"contraseña\": \"d830vfd\",\r\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n    \"perfilAdquisitivo\": 100,\r\n    \"saldo\": 250000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "ee541179-99c0-4dab-9280-73e1c10d84c1",
+					"name": "Add Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"usuario\": \"v.escobar1\",\r\n   \"contraseña\": \"d830vfd\",\r\n   \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n   \"perfilAdquisitivo\": 100.67,\r\n   \"saldo\": 250.000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Establecimiento to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "267499ab-30a7-45e5-a011-c2ba58c5c659",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "52029bd2-f9f7-47bb-9584-c92296bb7132",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4e8a1b1f-65fe-4f5d-9e6b-f4f1598d3aad",
+					"name": "Add Establecimiento to Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250,\n    \"reservaAsignada\": [],\n    \"reseñas\": [],\n    \"establecimientosFav\": [\n        {\n            \"id\": \"16f05d0e-1275-234d-861d-0242dc212141\",\n            \"nombre\": \"Carnal\",\n            \"direccion\": \"Calle 19 #2A-10\",\n            \"capacidad\": 20,\n            \"costoPromedio\": 20000,\n            \"calificacionPromedio\": 5\n        }\n    ],\n    \"tagsCliente\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Invalid Establecimiento to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5a571ba2-ec0f-41a4-a062-edc00ef1391f",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ccb79fd1-bbd5-4dc5-903e-3d61542c4885",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "afebd165-8fe6-4ba6-9af2-320393bab0fc",
+					"name": "Add Invalid Establecimiento to Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Establecimiento to Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ea2bec5b-234a-4cef-bfa1-4574c118a813",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "eb1c0ba7-e85a-49af-8067-d49466f02eaa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "74e975c8-a802-4dc2-a3c4-11e2f06aecd8",
+					"name": "Add Establecimiento to Invalid Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Establecimiento of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0868166-a42c-4e08-8c6d-d38863341ee0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5852fdc9-0600-458f-a9e4-0b2ac85f0a42",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "02ca6213-c3c4-48c4-bd11-c18ec96de8ba",
+					"name": "Get Establecimiento of Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-234d-861d-0242dc212141\",\n    \"nombre\": \"Carnal\",\n    \"direccion\": \"Calle 19 #2A-10\",\n    \"capacidad\": 20,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 5\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Establecimiento of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5ee1ed82-3369-444c-b559-34e02a90ca54",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "91dca828-a59c-4913-a32e-b1a3fd858006",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e8a32be1-a642-4ccd-b95d-05f1166ba61b",
+					"name": "Get Invalid Establecimiento of Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Establecimiento of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b9df710b-edce-4c88-84ca-2a959a09f661",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "0426f3e9-de9d-481a-9699-b51831bf65ed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b555bb26-8e51-4919-bdc9-a9635b41d54a",
+					"name": "Get Establecimiento of Invalid Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Establecimiento Non-Associated to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c42b9f3-98ff-4f5d-984a-5954696166f6",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id is not associated to the cliente\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2cb3a45e-91db-4bd2-831b-05b9bb043c8b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos",
+						"{{establecimiento_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "6847e178-78b8-4840-8fbd-d5ac6618e7fa",
+					"name": "Get Establecimiento Non-Associated to Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos",
+								"{{establecimiento_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 412,\r\n    \"message\": \"El establecimiento con el id dado no está asociado a un cliente\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Establecimientos of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "51f36f6b-87a4-48aa-9004-a4e604e6a67f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "0373aa90-e661-456f-8867-4f39ea358f53",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "97663b9b-ee3b-4aac-98db-c09faf145c23",
+					"name": "Get All Establecimientos of Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242dc212141\",\n        \"nombre\": \"Carnal\",\n        \"direccion\": \"Calle 19 #2A-10\",\n        \"capacidad\": 20,\n        \"costoPromedio\": 20000,\n        \"calificacionPromedio\": 5\n    },\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242d2312141\",\n        \"nombre\": \"Doña blanca\",\n        \"direccion\": \"Calle 20 #2A-22\",\n        \"capacidad\": 10,\n        \"costoPromedio\": 10000,\n        \"calificacionPromedio\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get All Establecimientos of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "772c8275-d0f4-4270-85b1-52a6c91e97ec",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "d85e51d5-1ec7-49a2-89bb-ad1ba5d2b35f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "52309447-7783-498e-af08-c2f03ad65673",
+					"name": "Get All Establecimientos of Invalid Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Establecimientos of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b9477f9-1b9e-470f-a57e-5e1b6b101571",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1c4ddcf7-82cb-4f4d-8719-518cef5b5186",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "99dd5f8a-6f0e-4e33-9c0f-953ee9794471",
+					"name": "Update Establecimientos of Cliente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250,\n    \"establecimientosFav\": [\n        {\n            \"id\": \"16f05d0e-1275-234d-861d-0242dc218341\",\n            \"nombre\": \"Hornitos\",\n            \"direccion\": \"Calle 19 #2A-10\",\n            \"capacidad\": 50,\n            \"costoPromedio\": 25000,\n            \"calificacionPromedio\": 5\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Establecimientos of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f4408b83-a59e-4cd1-9476-cf7cbe045559",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "442e45b4-c7a8-4d14-9b64-24efc3d97b2c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "96aa1053-3069-48e6-a41c-f52e2886b744",
+					"name": "Update Invalid Establecimientos of Cliente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Establecimientos of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0451688-ab75-490d-befd-bfd1e0a44f19",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "96f31c6f-a457-4cb0-aa09-171f1f460983",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "f69f1df0-08d6-49fd-a8f7-00e5b4e4c1b7",
+					"name": "Update Establecimientos of Invalid Cliente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Establecimiento of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "45b18477-1060-41e3-9428-cd7734f56275",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5ea34bc9-974c-468b-a8d3-f6d3bb2f86fa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos",
+						"{{establecimiento_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b6ef916d-fd53-45fc-ac95-fb2ad8e39015",
+					"name": "Delete Establecimiento of Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos",
+								"{{establecimiento_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Establecimiento of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "48c77e88-2e29-418e-a78a-a211f2b615a2",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "018395a5-513f-4a96-a5bf-c29076c1295b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"establecimientos",
+						"{{establecimiento_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "783a579b-8a2c-4fd4-bd10-d76dad0c5aa6",
+					"name": "Delete Establecimiento of Invalid Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/establecimientos/{{establecimiento_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"establecimientos",
+								"{{establecimiento_id_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Establecimiento of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c26e12a-c764-448d-8534-9136541ab660",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ea5b9f23-95fa-4938-8cdb-b45dbadec53c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c32dfe33-cbd6-45ed-8096-1dc4ef419471",
+					"name": "Delete Invalid Establecimiento of Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Establecimiento Non-Associated to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb9fde5d-d2bd-446a-a252-efef99a1a4c2",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The establecimiento with the given id is not associated to the cliente\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9c93337b-8312-4f0e-97ac-d831f7b9d744",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"establecimientos",
+						"{{establecimiento_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e0889fb5-3c62-43e8-9a2a-5de67a3f31a0",
+					"name": "Delete Establecimiento Non-Associated to Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/establecimientos/{{establecimiento_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"establecimientos",
+								"{{establecimiento_id_1}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El establecimiento con el id dado no está asociado a un cliente\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0fa7c7e7-5365-47ad-84fb-603a056e7ba4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8e0cf739-29b4-49bb-87e4-8bd74711e332",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c301e04e-f7e8-46af-b6a5-ac0204bc3f44",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "5477e5cd-a1ab-4762-b7ce-4d7530c58ed4",
+			"key": "administradorEstablecimiento_id_1",
+			"value": ""
+		},
+		{
+			"id": "c39d13b7-2154-4847-8f68-52555f8da642",
+			"key": "establecimiento_id_1",
+			"value": ""
+		},
+		{
+			"id": "23a93942-171c-4fb0-9b6d-7e8afc6190db",
+			"key": "administradorEstablecimiento_id_2",
+			"value": ""
+		},
+		{
+			"id": "eb1b6259-9b00-453e-bc19-bbd28a81bb33",
+			"key": "establecimiento_id_2",
+			"value": ""
+		},
+		{
+			"id": "be528c67-91fe-437e-8b39-3fbd8d6e455a",
+			"key": "cliente_id",
+			"value": ""
+		}
+	]
+}

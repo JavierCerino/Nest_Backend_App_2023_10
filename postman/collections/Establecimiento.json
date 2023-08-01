@@ -1,0 +1,1094 @@
+{
+	"info": {
+		"_postman_id": "edc7b60c-6e49-4d28-959c-cb48bf9c0ff5",
+		"name": "Establecimiento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25914505"
+	},
+	"item": [
+		{
+			"name": "Tokens",
+			"item": [
+				{
+					"name": "Get Token AdminEst Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"AdminEst_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"administradorEstablecimiento.write\",\r\n    \"password\": \"administradorEstablecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.write\",\r\n    \"password\": \"establecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_read\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.read\",\r\n    \"password\": \"establecimientoRead\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.delete\",\r\n    \"password\": \"establecimientoDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token AdministradorEstablecimiento Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"AdminEst_token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"administradorEstablecimiento.delete\",\r\n    \"password\": \"administradorEstablecimientoDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"administradorEstablecimiento_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AdminEst_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan Jose\",\r\n    \"apellido\": \"Valencia\",\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"establecimiento_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":5,\r\n    \"adminEst\": {\r\n        \"id\": \"{{administradorEstablecimiento_id}}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an establecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all establecimientos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Number of museums > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all establecimientos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n        \"nombre\": \"One Burito\",\n        \"direccion\": \"Calle 21 #2A-49\",\n        \"capacidad\": 5,\n        \"costoPromedio\": 20000,\n        \"calificacionPromedio\": 4.5,\n        \"clientes\":[\n            {\n                \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n                \"usuario\": \"v.escobar1\",\n                \"contraseña\": \"d830vfd\",\n                \"correo\": \"v.escobar1@uniandes.edu.co\",\n                \"perfilAdquisitivo\": 100.67,\n                \"saldo\": 250\n            }\n        ],\n        \"menus\":[\n            {\n                \"id\":\"47a9ab90-1276-11ed-861d-0242ac125879\",\n                \"nombre\": \"Menu de postres\"\n            }\n        ],\n        \"adminEst\": {\n            \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n            \"usuario\": \"jj.valencia\",\n            \"contraseña\": \"2490hssGxs\",\n            \"correo\": \"jj.valencia@uniandes.edu.co\"\n        },\n        \"tagEstablecimiento\":[\n            {\n                \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n                \"Nombre\": \"comida méxicana\"\n            }\n        ],\n        \"promociones\":[\n            {\n                \"id\":\"16f05d0e-1275-234d-861d-0242d2314795\",\n                \"tipo\":\"Segunda Unidad a mitad de precio\",\n                \"descripcion\":\"Lleve la segunda unidad a mitad de precio por compras superiores a 20000 pesos.\"\n            }\n        ],\n        \"reseñas\": [\n            {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\n                \"tipo\": \"Constructiva\",\n                \"descripcion\": \"Tener más mesas\"\n            }\n        ],\n        \"reservas\":[\n                {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac120001\",\n                \"fecha\": \"2023-03-16\",\n                \"mesaAsignada\": 3,\n                \"numPersonas\": 2,\n                \"tipo\": \"premium\",\n                \"descripcion\": \"Por favor sin ají\"\n            }\n        ]\n    },\n    {\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120004\",\n        \"nombre\": \"Doña Blanca\",\n        \"direccion\": \"Carrera 2 #2A-49\",\n        \"capacidad\": 20,\n        \"costoPromedio\": 15000,\n        \"calificacionPromedio\": 3.5,\n        \"clientes\":[\n            {\n                \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n                \"usuario\": \"v.escobar1\",\n                \"contraseña\": \"d830vfd\",\n                \"correo\": \"v.escobar1@uniandes.edu.co\",\n                \"perfilAdquisitivo\": 100.67,\n                \"saldo\": 250\n            }\n        ],\n        \"menus\":[\n            {\n                \"id\":\"47a9ab90-1276-11ed-861d-0242ac125879\",\n                \"nombre\": \"Menu de postres\"\n            }\n        ],\n        \"adminEst\":{\n            \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n            \"usuario\": \"jj.valencia\",\n            \"contraseña\": \"2490hssGxs\",\n            \"correo\": \"jj.valencia@uniandes.edu.co\"\n        },\n        \"tagEstablecimiento\":[\n            {\n                \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n                \"Nombre\": \"comida casera\"\n            }\n        ],\n        \"promociones\":[\n            {\n                \"id\":\"16f05d0e-1275-234d-861d-0242d2314795\",               \n                \"tipo\":\"Segunda Unidad a mitad de precio\",\n                \"descripcion\":\"Lleve la segunda unidad a mitad de precio por compras de tamales\"\n            }\n        ],\n        \"reseñas\": [\n            {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\n                \"tipo\": \"Constructiva\",\n                \"descripcion\": \"Tener más mesas\"\n            }\n        ],\n        \"reservas\":[\n                {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac120004\",\n                \"fecha\": \"2023-03-16\",\n                \"mesaAsignada\": 3,\n                \"numPersonas\": 2,\n                \"tipo\": \"premium\",\n                \"descripcion\": \"Por favor sin maiz\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get one establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get one establecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n    \"nombre\": \"One Burito\",\r\n    \"direccion\": \"Calle 21 #2A-49\",\r\n    \"capacidad\": 5,\r\n    \"costoPromedio\": 20000,\r\n    \"calificacionPromedio\": 4.5,\r\n    \"clientes\":[\r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\r\n            \"usuario\": \"v.escobar1\",\r\n            \"contraseña\": \"d830vfd\",\r\n            \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 100.67,\r\n            \"saldo\": 250\r\n       }\r\n    ],\r\n    \"menus\":[\r\n        {\r\n            \"id\":\"47a9ab90-1276-11ed-861d-0242ac125879\",\r\n            \"nombre\": \"Menu de postres\"\r\n        }\r\n    ],\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    },\r\n    \"tagEstablecimiento\":[\r\n        {\r\n            \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\r\n            \"Nombre\": \"comida méxicana\"\r\n        }\r\n    ],\r\n    \"promociones\":[\r\n        {\r\n            \"id\":\"16f05d0e-1275-234d-861d-0242d2314795\",\r\n            \"tipo\":\"Segunda Unidad a mitad de precio\",\r\n            \"descripcion\":\"Lleve la segunda unidad a mitad de precio por compras superiores a 20000 pesos.\"\r\n        }\r\n    ],\r\n    \"reseñas\": [\r\n        {\r\n            \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\r\n            \"tipo\": \"Constructiva\",\r\n            \"descripcion\": \"Tener más mesas\"\r\n        }\r\n    ],\r\n    \"reservas\":[\r\n            {\r\n            \"id\": \"16f05d0e-1275-44ed-861d-0242ac120001\",\r\n            \"fecha\": \"2023-03-16\",\r\n            \"mesaAsignada\": 3,\r\n            \"numPersonas\": 2,\r\n            \"tipo\": \"premium\",\r\n            \"descripcion\": \"Por favor sin ají\"\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get an invalid establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el establecimiento con el establecimientoId: 00000000-0000-0000-0000-000000000000\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get an invalid establecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El establecimiento con el id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update an establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"a 18-63,, Cra. 3 Este #181 (Nueva direccion)\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":5,\r\n    \"adminEst\":\"{{administradorEstablecimiento_id}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an establecimiento",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"a 18-63,, Cra. 3 Este #181 (Nueva direccion)\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"a 18-63,, Cra. 3 Este #181 (Nueva direccion)\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5,\n    \"adminEst\": {\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n        \"usuario\": \"jj.valencia\",\n        \"contraseña\": \"2490hssGxs\",\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update an invalid establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Establecimiento no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"a 18-63,, Cra. 3 Este #181 (Nueva direccion)\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":5,\r\n    \"adminEst\":\"{{administradorEstablecimiento_id}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an invalid establecimiento",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El establecimiento con el id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete an establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an establecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete an invalid establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Establecimiento no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an invalid establecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El establecimiento con el id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AdminEst_token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "administradorEstablecimiento_id",
+			"value": ""
+		},
+		{
+			"key": "establecimiento_id",
+			"value": ""
+		},
+		{
+			"key": "AdminEst_token_write",
+			"value": ""
+		},
+		{
+			"key": "token_write",
+			"value": ""
+		},
+		{
+			"key": "token_read",
+			"value": ""
+		},
+		{
+			"key": "token_delete",
+			"value": ""
+		},
+		{
+			"key": "admin_id",
+			"value": ""
+		},
+		{
+			"key": "AdminEst_token_delete",
+			"value": ""
+		}
+	]
+}

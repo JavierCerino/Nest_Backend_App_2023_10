@@ -1,0 +1,2301 @@
+{
+	"info": {
+		"_postman_id": "84228a6d-c78a-42b7-89f1-fd5620d85c83",
+		"name": "Reserva-Cliente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25914512-84228a6d-c78a-42b7-89f1-fd5620d85c83"
+	},
+	"item": [
+		{
+			"name": "Tokens",
+			"item": [
+				{
+					"name": "Get Token Cliente Write Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"cliente_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "d2b871cd-ead0-41bb-87fd-42753a8ffbc7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"cliente.write\",\r\n    \"password\": \"clienteWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token AdminEst Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"AdminEst_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "882c9adf-0024-4e6e-a84d-404095b58640",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"administradorEstablecimiento.write\",\r\n    \"password\": \"administradorEstablecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"establecimiento_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "914dad04-1fac-43ca-b8fd-1802f04980a7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.write\",\r\n    \"password\": \"establecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Reserva Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_read\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "336a49f1-ffde-45b9-9a8c-425ebc3d6c51",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"reserva.read\",\r\n    \"password\": \"reservaRead\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Reserva Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "404d20f1-1862-4079-8244-23ddf4c8328c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"reserva.write\",\r\n    \"password\": \"reservaWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Reserva Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ad5da5d-88dc-424d-b896-8f07822b8c10",
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "5298e2c9-e03c-447b-8e69-5869b25ae5a9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"reserva.delete\",\r\n    \"password\": \"reservaDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "382c9e47-74b0-4e3a-a2f9-3827657a6982"
+		},
+		{
+			"name": "Add AdministradorEstablecimiento Reserva Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "64001881-d927-4cbd-a8c6-5b39fd58d45c",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"admin_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b689a24c-0d44-463c-9913-d8169ed4aa30",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AdminEst_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan Jose\",\r\n    \"apellido\": \"Valencia\",\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "5c8a1268-c669-49b7-bc8c-4a96269e1323",
+					"name": "Add AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an Establecimiento Reserva Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"establecimiento_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3762c841-305d-44c9-9655-c873239142d3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{establecimiento_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":5,\r\n    \"adminEst\": {\r\n        \"id\": \"{{admin_id}}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "5593b522-fb56-4be3-b704-37abfef9656c",
+					"name": "Add an establecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Cliente Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "37adadcc-de95-4e82-a2c5-6f1d3ec2c37d",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"cliente_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "801bd2d1-5d7d-4cba-9e54-52f9547b0648",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{cliente_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Valentina\",\r\n    \"apellido\": \"Escobar\",\r\n    \"usuario\": \"v.escobar1\",\r\n    \"contraseña\": \"d830vfd\",\r\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n    \"perfilAdquisitivo\": 100,\r\n    \"saldo\": 250000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b23d967a-be44-45c9-976a-4e421335b765",
+					"name": "Add Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"usuario\": \"v.escobar1\",\r\n   \"contraseña\": \"d830vfd\",\r\n   \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n   \"perfilAdquisitivo\": 100.67,\r\n   \"saldo\": 250.000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Cliente Reserva (No associated)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "37adadcc-de95-4e82-a2c5-6f1d3ec2c37d",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"cliente_id2\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "dd9b922e-eb50-40dc-8012-e1cb005f83ba",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{cliente_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Daniela\",\r\n    \"apellido\": \"Ramirez\",\r\n    \"usuario\": \"d.ramirez\",\r\n    \"contraseña\": \"d830vfd\",\r\n    \"correo\": \"d.ramirez@uniandes.edu.co\",\r\n    \"perfilAdquisitivo\": 100,\r\n    \"saldo\": 250000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "28923615-5609-4dc3-af27-f4ee9ce5aba9",
+					"name": "Add Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"usuario\": \"v.escobar1\",\r\n   \"contraseña\": \"d830vfd\",\r\n   \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n   \"perfilAdquisitivo\": 100.67,\r\n   \"saldo\": 250.000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "93bc9129-cf75-4b7b-b840-4badc198ba0d",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"reserva_id\", data.id)\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "08f74892-f5f2-4a26-be76-88d62ca6aeae",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": -1,\r\n    \"numPersonas\": 0,\r\n    \"tipo\": \"pick-up\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"{{establecimiento_id}}\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "10aaff18-4516-4adb-a0be-2c7ef988f042",
+					"name": "Add Reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\r\n    \"fecha\": \"2023-02-16\",\r\n    \"mesaAsignada\": -1,\r\n    \"numPersonas\": 0,\r\n    \"tipo\": \"pick-up\",\r\n    \"descripcion\": \"Por favor sin ají\",\r\n    \"cliente\": \r\n        {\r\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\r\n            \"usuario\": \"e.stiven2\",\r\n            \"contraseña\": \"d83ksds\",\r\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\r\n            \"perfilAdquisitivo\": 102.22,\r\n            \"saldo\": 50000\r\n        },\r\n    \"establecimiento\":\r\n        {\r\n            \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n            \"nombre\": \"One Burito\",\r\n            \"direccion\": \"Calle 21 #2A-49\",\r\n            \"capacidad\": 5,\r\n            \"costoPromedio\": 20000,\r\n            \"calificacionPromedio\": 4.5\r\n        },\r\n    \"productosReserva\":\r\n        [\r\n            {\r\n                \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n                \"nombre\": \"Pepsi\",\r\n                \"tipoProducto\": \"Bebida\",\r\n                \"precio\": \"3000\"\r\n            },\r\n            {\r\n                \"id\": \"c8d7b02a1e5df5b5f12997491f5a6db1\",\r\n                \"nombre\": \"Huevos fritos\",\r\n                \"tipoProducto\": \"Desayuno\",\r\n                \"precio\": \"7000\"\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"fecha\": \"2023-02-16\",\n    \"mesaAsignada\": -1,\n    \"numPersonas\": 0,\n    \"tipo\": \"pick-up\",\n    \"descripcion\": \"Por favor sin ají\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Cliente to Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef45f46a-766e-4b31-b589-d5e85ec8bc3e",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "7923d7d5-d0e6-4377-a4c6-0be42e195f0f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/{{cliente_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes",
+						"{{cliente_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "da1bf324-7b5e-460d-be4d-3edcb17606a6",
+					"name": "Add Cliente to Reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/{{cliente_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"clientes",
+								"{{cliente_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\n    \"fecha\": \"2023-02-16\",\n    \"mesaAsignada\": -1,\n    \"numPersonas\": 0,\n    \"tipo\": \"pick-up\",\n    \"descripcion\": \"Por favor sin ají\",\n    \"cliente\": \n        {\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\n            \"usuario\": \"e.stiven2\",\n            \"contraseña\": \"d83ksds\",\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\n            \"perfilAdquisitivo\": 102.22,\n            \"saldo\": 50000\n        }\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Invalid Cliente to Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d1eb67e-a169-4fae-a2fc-016569809a19",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "db8f1fa0-c60e-471d-9dd2-8d6512530928",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "baf0b2a3-8735-442e-943b-3bab19e4f2ce",
+					"name": "Add Invalid Cliente to Reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"clientes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Cliente to Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3be771b2-6c2f-4978-9e7e-ac0eb6c40da1",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "afd3d400-d0e9-48fc-96b5-e85855b9a99a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/clientes/{{cliente_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"clientes",
+						"{{cliente_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4bc83ea7-e437-4512-9704-f657153fac0d",
+					"name": "Add Cliente to Invalid Reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/clientes/{{cliente_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000",
+								"clientes",
+								"{{cliente_id}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con id dado no fue encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Cliente of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5fe1ac27-f915-486b-8241-ea72eb1e0427",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1db9bb2c-24ff-424c-bef5-188bbc4917df",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/{{cliente_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes",
+						"{{cliente_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "076c899d-bfcd-46b3-8db8-8cdb8444275c",
+					"name": "Get Cliente of Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/{{cliente_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"clientes",
+								"{{cliente_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\n    \"usuario\": \"e.stiven2\",\n    \"contraseña\": \"d83ksds\",\n    \"correo\": \"e.stiven2@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 102.22,\n    \"saldo\": 50000\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Cliente of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e083a5c-176e-44e9-9197-9daab9d2eb23",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "67fc189e-2c59-4a6a-8aa9-df16934843c2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e8bcc2ca-777a-4803-aa7f-e56886dc50e1",
+					"name": "Get Invalid Cliente of Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"clientes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Cliente of Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bdc7f45c-7242-4d61-9634-704fa4e6db20",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "00b49b86-ddce-47b0-bd35-bc25d6dc90e6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/clientes/{{cliente_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"clientes",
+						"{{cliente_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "9cf0d522-ab1a-43d9-8349-20f60b51ab65",
+					"name": "Get Cliente of Invalid Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/clientes/{{cliente_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000",
+								"clientes",
+								"{{cliente_id}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con id dado no fue encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Cliente Non-Associated to Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc1903e0-05d1-44f9-9361-5501d5a7f327",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id is not associated to the reserva\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "22f37c9e-e35d-462e-bb01-3370a82c5966",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/{{cliente_id2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes",
+						"{{cliente_id2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "ce3f071b-63b9-42d4-aba3-d5c004a60c11",
+					"name": "Get Cliente Non-Associated to Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/{{cliente_id2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"clientes",
+								"{{cliente_id2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 412,\r\n    \"message\": \"El cliente con el id dado no está asociado a un cliente\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Clientes of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "822009b4-2531-4a74-8958-9a45b054f3f8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "0aa21dd0-f104-490f-9403-e78b6e212c8a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "9e40bbd6-9ab0-4974-be65-5f882f38eba5",
+					"name": "Get All Clientes of Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{reserva_id}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{reserva_id}}",
+								"productos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\n        \"usuario\": \"e.stiven2\",\n        \"contraseña\": \"d83ksds\",\n        \"correo\": \"e.stiven2@uniandes.edu.co\",\n        \"perfilAdquisitivo\": 102.22,\n        \"saldo\": 50000\n    },\n    {\n        \"id\": \"16f05d0e-1275-11ed-861d-0233ac122201\",\n        \"usuario\": \"e.stive222\",\n        \"contraseña\": \"d83ksds\",\n        \"correo\": \"e.stive222@uniandes.edu.co\",\n        \"perfilAdquisitivo\": 102.22,\n        \"saldo\": 5004\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get All Clientes of Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1c7d0cd-1e50-4461-8d95-f40bc28d7bf5",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ef84ffe6-7136-4742-b4d3-deda68453c12",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d19f4f17-9b7c-490b-bbbd-a38bdddc4143",
+					"name": "Get All Productos of Invalid Reserva",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Cliente of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a7ea810-8212-4e4b-b704-968b5a7a5091",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4f08bfa3-fc80-4935-9b5d-72a9568d50ce",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{cliente_id2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "f49809aa-8fa4-4c2d-8d5f-f14eb5321ed6",
+					"name": "Update Cliente of Reserva",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{reserva_id2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"clientes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"23f04d0e-1275-11ed-861d-0242ac122201\",\n    \"fecha\": \"2023-02-16\",\n    \"mesaAsignada\": -1,\n    \"numPersonas\": 0,\n    \"tipo\": \"pick-up\",\n    \"descripcion\": \"Por favor sin ají\",\n    \"cliente\":             \n        {\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\n            \"usuario\": \"e.stiven2\",\n            \"contraseña\": \"d83ksds\",\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\n            \"perfilAdquisitivo\": 102.22,\n            \"saldo\": 50000\n        }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Cliente of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad3aabac-2657-49ff-87cf-03f61dcfdd89",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4cbc6009-970e-496d-9568-20fd8559f024",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e41356ca-f208-44b2-b62a-e00eeff70b43",
+					"name": "Update Invalid Cliente of Reserva",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"clientes"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Cliente of Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f2766a5e-d805-46c8-ae1a-804134f11cf0",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "80ea6560-2a2b-4386-80d5-56c6bfb0206a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{cliente_id2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "2c66ea62-f31d-4dfb-b313-a70a3bee2323",
+					"name": "Update Cliente of Invalid Reserva",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{establecimiento_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000",
+								"clientes"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Cliente of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "55934297-aa47-4a4b-b62d-576f4b2af5a1",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "251bf1ae-51fb-4c59-893c-098391676138",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/{{cliente_id2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes",
+						"{{cliente_id2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "7cd3f6ac-80f8-4ce1-882e-78b68d6a9697",
+					"name": "Delete Cliente of Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{reserva_id}}/clientes/{{cliente_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{reserva_id}}",
+								"clientes",
+								"{{cliente_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Cliente of Invalid Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "af66aaa9-629e-4975-b253-b4030a56e9d5",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The reserva with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "86a205fc-1efb-473f-9d2e-dff6236d3d18",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/clientes/{{cliente_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"00000000-0000-0000-0000-000000000000",
+						"clientes",
+						"{{cliente_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "90195b53-5d5f-4ca8-a013-e0d53b296051",
+					"name": "Delete Cliente of Invalid Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/00000000-0000-0000-0000-000000000000/clientes/{{cliente_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"00000000-0000-0000-0000-000000000000",
+								"clientes",
+								"{{cliente_id}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La reserva con id dado no fue encontrada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Cliente of Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "079863ba-03a3-4ee5-8566-1a4b76091f3a",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "39bb5e75-d7fb-4b5d-b56f-4899b40b1a5d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a7ee1ee4-a327-4a06-9f5f-3807e5186149",
+					"name": "Delete Invalid Cliente of Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"clientes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Cliente Non-Associated to Reserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ed13bb5-43ae-41bd-92ef-77c1bfef2b92",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id is not associated to the reserva\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9d14241c-fb95-4f88-95fd-b34dbd2c6bb3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/{{cliente_id2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reservas",
+						"{{reserva_id}}",
+						"clientes",
+						"{{cliente_id2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "6d7cc8df-ad1a-401b-a898-eca69cfcb832",
+					"name": "Delete Cliente Non-Associated to Reserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/{{reserva_id}}/clientes/{{cliente_id2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"{{reserva_id}}",
+								"clientes",
+								"{{cliente_id2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El cliente con el id dado no está asociado a una reserva\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b919c379-7bc3-420f-9b35-adba4a60fba9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "57461dca-5a5e-4411-a723-9d9b885417d9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "374cf082-bf86-4ce7-8c8d-f6d75e6504f7",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "a036cf77-0d9e-4732-a4d9-f1175214fe0a",
+			"key": "reserva_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "ea949a63-dd10-4e1a-99ad-662fc9b51ed1",
+			"key": "cliente_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "2e6cc188-aac3-48d0-8830-8611cde6136e",
+			"key": "cliente_id2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "354d071c-cce3-4f04-bb8d-cc3edbcf4c9f",
+			"key": "admin_id",
+			"value": ""
+		},
+		{
+			"id": "0bde6f6c-93c6-4790-94f6-b2608f6b209e",
+			"key": "establecimiento_id",
+			"value": ""
+		},
+		{
+			"id": "446fb161-3c67-4392-912d-e23bd4d7cccf",
+			"key": "cliente_token_write",
+			"value": ""
+		},
+		{
+			"id": "16e2e653-0ed4-4456-9d8c-61ee8db9aa85",
+			"key": "AdminEst_token_write",
+			"value": ""
+		},
+		{
+			"id": "18c125b7-e9a6-4d65-b9e2-2f80d916705d",
+			"key": "establecimiento_token_write",
+			"value": ""
+		},
+		{
+			"id": "516d4d5d-ee5f-427d-9f5a-0f801d73b1a5",
+			"key": "token_read",
+			"value": ""
+		},
+		{
+			"id": "155b4cf9-9476-4b2b-bd17-7a9180828f4f",
+			"key": "token_write",
+			"value": ""
+		},
+		{
+			"id": "f50eadfe-6f3a-4e85-a618-203ea3f9d311",
+			"key": "token_delete",
+			"value": ""
+		}
+	]
+}

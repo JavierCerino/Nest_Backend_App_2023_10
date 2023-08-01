@@ -1,0 +1,1581 @@
+{
+	"info": {
+		"_postman_id": "f6f6d94a-5f43-4440-b014-a3eecee7d1ed",
+		"name": "Cliente-Tag",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "17257891-f6f6d94a-5f43-4440-b014-a3eecee7d1ed"
+	},
+	"item": [
+		{
+			"name": "Add Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9c03ad82-0d80-4ec9-ba69-66dd2a7203a2",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"cliente_id\", data.id)\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4283e720-6fb5-4671-b1b7-c74daa22ff25",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Valentina\",\r\n    \"apellido\": \"Escobar\",\r\n    \"usuario\": \"v.escobar1\",\r\n    \"contraseña\": \"d830vfd\",\r\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n    \"perfilAdquisitivo\": 100,\r\n    \"saldo\": 250000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a1f0c86c-cc1a-413e-b3a0-434a9d9aeca4",
+					"name": "Add Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"usuario\": \"v.escobar1\",\r\n   \"contraseña\": \"d830vfd\",\r\n   \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n   \"perfilAdquisitivo\": 100.67,\r\n   \"saldo\": 250.000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Tag id1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"tag_id_1\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "fbe51a57-f407-43fd-a14c-b219038e802b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"comida méxicana\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "aeae21cf-011c-4719-9f34-cb90d84f4a26",
+					"name": "Add a tag",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"comida méxicana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n    \"Nombre\": \"comida méxicana\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Tag id2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd0e86af-f11a-498e-9a48-32cae3988941",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"tag_id_2\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "316bf4b2-90ba-4988-9fe4-21576bfdc10e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"comida tailandesa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tags"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0276207b-24ae-418b-a573-393752e9d66e",
+					"name": "Add a tag",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"comida méxicana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n    \"Nombre\": \"comida méxicana\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Tag to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d08a0432-d93a-4408-9ecc-493cf4319c54",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "83fb0f37-0eb0-49ea-85e1-a40bf070e246",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags",
+						"{{tag_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "5e7dec27-73e3-48f4-a73b-a39fa28474e0",
+					"name": "Add Tag to Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags",
+								"{{tag_id_1}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250,\n    \"reservaAsignada\": [],\n    \"reseñas\": [],\n    \"establecimientosFav\": [],\n    \"tagsCliente\": [\n        {\n            \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n            \"Nombre\": \"comida china\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Invalid Tag to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d94a95f-dca5-4561-ae82-2b88524154ba",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The tag with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8f2771d8-be39-4ad1-9fcf-9ff5162c5802",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "81b6a829-c648-4339-b11a-5d9b440173b5",
+					"name": "Add Invalid Tag to Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El tag con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Tag to Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb3c71cb-501d-42e6-ba8a-45022eeb81ed",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "59f3e5c5-2af0-4a4f-a55e-9828faf104ed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags/{{tag_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"tags",
+						"{{tag_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0bba61ec-ae55-415e-bec2-71f5b2b17b67",
+					"name": "Add Tag to Invalid Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags/{{tag_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"tags",
+								"{{tag_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Tag of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9947d5ab-86c9-4408-bab8-a52eb38857a5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1005eb74-9628-47e4-bf79-5327416d407c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags",
+						"{{tag_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b43ec36e-450c-473b-a8f4-60acfa97a2ae",
+					"name": "Get Tag of Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags",
+								"{{tag_id_1}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n    \"Nombre\": \"comida china\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Tag of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c6f18683-b550-4196-a6dc-b260e0a06e2b",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The tag with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9416fb64-8b1b-4f9e-951e-408b77729971",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "6b574a70-8e2a-4544-99b8-b3ba821a4a24",
+					"name": "Get Invalid Tag of Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El tag con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Tag of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "df4b73ca-e61c-49a8-85ba-0e919b9391f0",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4adcd46e-ac11-4070-b0d2-663db38001d6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags/{{tag_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"tags",
+						"{{tag_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "bac60762-8473-4dc6-b900-711b9e5f95e0",
+					"name": "Get Tag of Invalid Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags/{{tag_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"tags",
+								"{{tag_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Tag Non-Associated to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9fe880d6-ac39-4c2e-b0f0-91a34ac0ff62",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The tag with the given id is not associated to the cliente\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2ad34146-470c-4a2b-8340-d5a84caf09e9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags",
+						"{{tag_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3db1a385-8a5c-4c37-b0ac-1a545785c55a",
+					"name": "Get Tag Non-Associated to Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags",
+								"{{tag_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"La reseña con el id dado no está asociado a un cliente\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Tag of Clientes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f93e1086-ff87-4082-a69e-50469aa8d16b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "6a26a1c4-7af5-4eba-af1e-df46d9a6b342",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "7864bdda-086f-4a48-85dd-19a9d3a05e48",
+					"name": "Get All Tag of Clientes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n        \"Nombre\": \"comida china\"\n    },\n    {\n        \"id\": \"16f05d0e-1275-234d-861d-0242d2312151\",\n        \"Nombre\": \"comida japonesa\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get All Tags of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "919db15d-b760-411b-b673-da7631161044",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a6080732-575b-4510-88c9-077b94840c82",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"tags"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "641d6475-45b9-49cc-a633-72b02e8133e9",
+					"name": "Get All Tags of Invalid Cliente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"tags"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Tags of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f2a5131b-8b3a-4869-9cdd-47ee03b16b4b",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a09bb4e0-4e65-491e-b357-bd2a315a6a8b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{tag_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "dbec489a-88ab-4f64-942b-5c40ab2d1c38",
+					"name": "Update Tags of Cliente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{tag_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250,\n    \"tagsCliente\": [\n        {\n            \"id\": \"16f05d0e-1275-234d-sd7e-0242w2324150\",\n            \"Nombre\": \"comida tailandesa\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Tags of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8607b2f0-200e-4b82-abc3-5dda85e0aeec",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The tag with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1e47a955-2385-4b8f-b1c9-e4c4390d7118",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "797c7f5f-ebf6-4a24-b5b4-0abd996562d8",
+					"name": "Update Invalid Tags of Cliente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El tag con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Tags of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7b6c15f3-796e-4075-a3a1-2704a0448642",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "33538c48-73ed-4b6f-bf10-b4763fdc863f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{tag_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"tags"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "049b5224-cefb-4f47-9bc8-92e1c1a3a0a9",
+					"name": "Update Tags of Invalid Cliente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{tag_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"tags"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Tag Of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "382c081b-5f34-42b5-9abc-dcb06b17050b",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "50a2c8bf-07ff-4b2d-a29f-0c847e09e146",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags",
+						"{{tag_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "57de673e-d922-4020-a10b-5cd5c1927094",
+					"name": "Delete Tag Of Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags",
+								"{{tag_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Tag of Invalid Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "45f0d689-8dc7-4640-980a-240b3d65d9ae",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The cliente with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "08e1d3af-c572-4097-8297-537dc0bc503f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags/{{tag_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"00000000-0000-0000-0000-000000000000",
+						"tags",
+						"{{tag_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "7ea40a23-cef3-4818-8804-36fa6d55ef93",
+					"name": "Delete Tag of Invalid Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/00000000-0000-0000-0000-000000000000/tags/{{tag_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"00000000-0000-0000-0000-000000000000",
+								"tags",
+								"{{tag_id_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El cliente con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Tag of Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "01652c58-b4fe-4faa-bcea-948015b2e1ae",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The tag with the given id was not found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8e3e7300-10b6-4b27-a992-c2cb0d44d731",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "37935801-1503-401f-b8da-976b63f79235",
+					"name": "Delete Invalid Tag of Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El tag con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Tag Non-Associated to Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "92e7358f-9d6a-4a4c-b6d1-3902100ab95c",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"The tag with the given id is not associated to the cliente\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "12ff50c7-e53b-46d1-ac4a-62ca7fc5f74d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clientes",
+						"{{cliente_id}}",
+						"tags",
+						"{{tag_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "cc69cbc3-c2b3-46a1-a9df-81215abe1be5",
+					"name": "Delete Tag Non-Associated to Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clientes/{{cliente_id}}/tags/{{tag_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clientes",
+								"{{cliente_id}}",
+								"tags",
+								"{{tag_id_1}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El tag con el id dado no está asociado a un cliente\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8b3ac72f-acda-480b-a9ba-f59b10236ba8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6d7eacac-26b1-44d6-b0bd-c1bbdaa1271d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9bceb899-d77a-4d62-ab6f-a0860771d1cc",
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"id": "03b3008d-2b3c-4765-a21a-dbaf7fa69c41",
+			"key": "cliente_id",
+			"value": ""
+		},
+		{
+			"id": "b6112e34-4fd4-4a29-8124-f75f35615afb",
+			"key": "tag_id_1",
+			"value": ""
+		},
+		{
+			"id": "fa98a177-b9cd-46f1-a3c6-816f1dd73ed5",
+			"key": "tag_id_2",
+			"value": ""
+		}
+	]
+}

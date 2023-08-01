@@ -1,0 +1,1223 @@
+{
+	"info": {
+		"_postman_id": "9667444e-2a1b-4a6f-a69d-3cba7345cda4",
+		"name": "Producto-Promocion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "17257891-9667444e-2a1b-4a6f-a69d-3cba7345cda4"
+	},
+	"item": [
+		{
+			"name": "Add Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "765e4b37-fbc8-4a24-8b59-55b7dfec3840",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"producto_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "cd336e46-90c4-4ca6-97ec-3260aa021b45",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": 3000    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3dae34bc-b79e-4eb4-af0d-7e00e9e0db3f",
+					"name": "Add Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{        \r\n        \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": 3000   \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Promocion Id1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5778605f-7da9-4f0d-b6f9-15d5810dc4a5",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"promocion_id1\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ccb53d9b-8428-4810-8fda-7d3638f880ad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "7e7edd0f-121b-4b82-899b-2e963088ef10",
+					"name": "Add Promocion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\" ,\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Promocion Id2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5778605f-7da9-4f0d-b6f9-15d5810dc4a5",
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"promocion_id2\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3caddd24-8d94-4231-834b-b5a3ff75aed0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c75ef22e-3fa9-4422-a269-bffdde4f2ed2",
+					"name": "Add Promocion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promocion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promocion"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\" ,\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Promocion to Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "821f00c2-8273-4892-a5d8-6b6cdb3bc000",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a5c3b52a-0cbf-4bae-951f-ae2894d11a89",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones/{{promocion_id1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones",
+						"{{promocion_id1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e289cf24-e5df-42dd-b970-3d794f03a79e",
+					"name": "Add Promocion to Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{        \r\n        \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n        \"nombre\": \"Pepsi\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": \"3000\"    \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Invalid Promocion to Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f32ae398-70a3-4d62-ac3e-6a89758d3ba7",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Promocion no encontrada\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b5d87803-9b5d-464d-800d-658a1034fa5d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0e11eb1b-e655-4858-b579-8dbbdd35c141",
+					"name": "Add Invalid Promocion to Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"La promocion con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Promocion to invalid Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "32714513-2aa3-4a9a-aa1e-9967b9710cd0",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Producto no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1aa9c144-f002-4e14-8a43-37d671759c4e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones",
+						"{{promocion_id1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "36252a54-5101-4ffb-918f-af1a8ec7cc26",
+					"name": "Add Promocion to invalid Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El producto con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Promocion of Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86732dc4-0dc5-474f-a30c-a54bf7b8c95e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "82459fb9-0848-4cc9-90d3-bf300dd609e4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones/{{promocion_id1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones",
+						"{{promocion_id1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d57f6af6-8ea5-4e28-bdd1-2512eb51ee39",
+					"name": "Get Promocion of Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\" ,\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get invalid Promocion of Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5600a4cf-630d-47d4-840e-498ee1e1fa41",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Promocion no encontrada\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "7355a262-81e2-47da-9b3b-66a5610ff107",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "3ae4850f-267f-4438-8a72-7e28ea685fb9",
+					"name": "Get invalid Promocion of Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"La promocion  con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Promocion of invalid Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "45272367-53e1-46d5-80d8-2183158053ff",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Producto no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "bc48a18b-8482-4b95-b499-21d0ff3c673f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones",
+						"{{promocion_id1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "492dc31c-e1cc-4ea0-832a-d4c462f61d83",
+					"name": "Get Promocion of invalid Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El producto con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Promocion Non-Associated to Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "30aa9152-c09b-4d58-8120-1457c62f4b7a",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"La promocion con el id dado no está asociado al producto\");\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8f4c467c-58de-45bb-af1a-3918e3815844",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones/{{promocion_id2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones",
+						"{{promocion_id2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "798494f2-699b-4c49-94e1-32608565fb78",
+					"name": "Get Promocion Non-Associated to Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 412,\r\n    \"message\": \"La promocion con el id dado no está asociado a un producto\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all Promocion of Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86732dc4-0dc5-474f-a30c-a54bf7b8c95e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c3bd72e3-de17-415a-b718-d8cc82c2f963",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "1cd80d7d-f2a6-4973-87a3-2ff2ca0ef0e5",
+					"name": "Get Promocion of Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\" ,\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all Promocion of invalid Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "45272367-53e1-46d5-80d8-2183158053ff",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Producto no encontrado\");\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "28878e0a-762a-4969-af33-94037c09330e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones",
+						"{{promocion_id1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "9bcd5016-3d4e-4b1a-a5ae-fddbba315b50",
+					"name": "Get Promocion of invalid Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El producto con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Promocion of Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "69e4e83c-c204-4f34-8cd6-6ffa28b21a9e",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "f8aa5d86-68a8-4f83-bfd8-3bffe774b626",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0b2c694c-bdf7-47d6-8da6-881d0f35db15",
+					"name": "Update Promocion of Producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{        \r\n        \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\",\r\n        \"nombre\": \"Pepse\",\r\n        \"tipoProducto\": \"Bebida\",        \r\n        \"precio\": \"3000\"  \r\n        promociones:\r\n        [\r\n            {\r\n            \"id\": \"3a3f8d1c485fd31e57f70abf0c8f7b14\" ,\r\n            \"tipo\": \"Descuento\",\r\n            \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n            }    \r\n        ]  \r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Promocion of invalid Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f233252-411c-4809-b345-4d9d44e43b6b",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Producto no encontrado\");\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "916ebaa8-8796-4670-a7a1-2f9b1872b89c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4e3b2704-a2b3-4cf6-8e3f-e829a332ade7",
+					"name": "Update Promocion of invalid Producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El producto con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Promocion of Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2cd6435d-ec29-4801-882c-247153a6676f",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c0e0711d-897a-4ab5-b8de-437f03a59389",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones/{{promocion_id1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones",
+						"{{promocion_id1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "11ceae7b-79c9-4f62-a60e-ecfb90d6aabc",
+					"name": "Delete Promocion of Producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Promocion of invalid Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "36044c55-6070-4066-b6ba-645fa6a383e1",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Producto no encontrado\");\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "494b59c6-6146-4bd3-9610-2f7109039e3f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones",
+						"{{promocion_id1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4ebdeb6a-0cd5-4c46-9dce-7ab81b91e537",
+					"name": "Delete Promocion of invalid Producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El producto con id dado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete invalid Promocion of Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5c87267e-9a66-4d95-8269-d65cc3222b8b",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Promocion no encontrada\");\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "75dc266d-d5a2-40bf-8666-132d2dc160e6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "4e9b5a39-a046-4b8a-bea8-2d3a55216306",
+					"name": "Delete invalid Promocion of Producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Promocion Non-Assosiated Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "efc41548-b826-47b6-841f-7416b471241d",
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"La promocion con el id dado no está asociado al producto\");\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "28dcbee1-dc5e-4a29-90de-c152341a8740",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{producto_id}}/promociones/{{promocion_id2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{producto_id}}",
+						"promociones",
+						"{{promocion_id2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "668c7acc-d331-4a36-8142-239e47092660",
+					"name": "Delete Promocion Non-Assosiated Producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id_producto}}/promocion/{{id_promocion}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id_producto}}",
+								"promocion",
+								"{{id_promocion}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 412,\r\n    \"message\": \"La promocion con el id dado no está asociado a un producto\"\r\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "c7cb8e7d-99af-413d-92d1-657b73714247",
+			"key": "producto_id",
+			"value": ""
+		},
+		{
+			"id": "6fe7a7dd-4866-4119-9621-04a9967e8c25",
+			"key": "promocion_id1",
+			"value": ""
+		},
+		{
+			"id": "63db128e-4b86-4678-ac5c-a2f1cd34ae17",
+			"key": "promocion_id2",
+			"value": ""
+		}
+	]
+}

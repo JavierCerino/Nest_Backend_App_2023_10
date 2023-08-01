@@ -1,0 +1,2373 @@
+{
+	"info": {
+		"_postman_id": "0c97c8ee-7bbb-4378-9177-413e66e0a158",
+		"name": "Establecimiento-Promocion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25914505"
+	},
+	"item": [
+		{
+			"name": "Tokens",
+			"item": [
+				{
+					"name": "Get Token AdminEst Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"AdminEst_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"administradorEstablecimiento.write\",\r\n    \"password\": \"administradorEstablecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.write\",\r\n    \"password\": \"establecimientoWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_read\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.read\",\r\n    \"password\": \"establecimientoRead\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Establecimiento Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"establecimiento.delete\",\r\n    \"password\": \"establecimientoDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token AdministradorEstablecimiento Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"AdminEst_token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"administradorEstablecimiento.delete\",\r\n    \"password\": \"administradorEstablecimientoDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Promocion Write",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Promo_token_write\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"promocion.write\",\r\n    \"password\": \"promocionWrite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Promocion Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Promo_token_delete\", data.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"promocion.delete\",\r\n    \"password\": \"promocionDelete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"administradorEstablecimiento_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AdminEst_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"nombre\": \"Juan Jose\",\r\n    \"apellido\": \"Valencia Moreno\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"jj.valencia\",\r\n    \"contraseña\": \"2490hssGxs\",\r\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"jj.valencia\",\n    \"contraseña\": \"2490hssGxs\",\n    \"correo\": \"jj.valencia@uniandes.edu.co\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"establecimiento_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"One Burito\",\r\n    \"direccion\": \"Cl. 19 Bis #1-85\",\r\n    \"capacidad\": 5,\r\n    \"costoPromedio\": 20000,\r\n    \"calificacionPromedio\": 5,\r\n    \"adminEst\": \"{{administradorEstablecimiento_id}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an establecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"One Burito\",\r\n    \"direccion\":\"Cl. 19 Bis #1-85\",\r\n    \"capacidad\":5,\r\n    \"costoPromedio\":20000,\r\n    \"calificacionPromedio\":4.5,\r\n    \"adminEst\": {\r\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\r\n        \"usuario\": \"jj.valencia\",\r\n        \"contraseña\": \"2490hssGxs\",\r\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Promocion 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"promocion_id_1\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Promo_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"10% de descuento en compras mayores a 100000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Promocion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"usuario\": \"v.escobar1\",\r\n   \"contraseña\": \"d830vfd\",\r\n   \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n   \"perfilAdquisitivo\": 100.67,\r\n   \"saldo\": 250.000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/promociones",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promociones"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Promocion 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.collectionVariables.set(\"promocion_id_2\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Promo_token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"Descuento\",\r\n    \"descripcion\": \"25% de descuento en al comprar dos unidades\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Promocion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"usuario\": \"v.escobar1\",\r\n   \"contraseña\": \"d830vfd\",\r\n   \"correo\": \"v.escobar1@uniandes.edu.co\",\r\n   \"perfilAdquisitivo\": 100.67,\r\n   \"saldo\": 250.000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/promociones",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promociones"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Promocion to Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/{{promocion_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones",
+						"{{promocion_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Promocion to Establecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/{{promocion_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones",
+								"{{promocion_id_1}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5,\n    \"promociones\":[\n        {\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n            \"usuario\": \"v.escobar1\",\n            \"contraseña\": \"d830vfd\",\n            \"correo\": \"v.escobar1@uniandes.edu.co\",\n            \"perfilAdquisitivo\": 100.67,\n            \"saldo\": 250\n        }\n    ],\n    \"menus\":[],\n    \"adminEst\": {\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n        \"usuario\": \"jj.valencia\",\n        \"contraseña\": \"2490hssGxs\",\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\n    },\n    \"tagEstablecimiento\":[],\n    \"promociones\":[],\n    \"reseñas\": [],\n    \"reservas\":[]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Invalid Promocion to Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el promocion con el promocionId: \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Invalid Promocion to Establecimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El promocion con el id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Promocion to Invalid Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el establecimiento con el establecimientoId: \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones",
+						"{{promocion_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Establecimiento to Invalid Promocion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"promociones",
+								"{{promocion_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El Establecimiento con el id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Promocion of Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/{{promocion_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones",
+						"{{promocion_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Promocion of Establecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/{{promocion_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones",
+								"{{promocion_id_1}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n    \"usuario\": \"v.escobar1\",\n    \"contraseña\": \"d830vfd\",\n    \"correo\": \"v.escobar1@uniandes.edu.co\",\n    \"perfilAdquisitivo\": 100.67,\n    \"saldo\": 250,\n    \"reservaAsignada\": [\n        {\n            \"id\": \"16f05d0e-1275-44ed-861d-0242ac120001\",\n            \"fecha\": \"2023-03-16\",\n            \"mesaAsignada\": 3,\n            \"numPersonas\": 2,\n            \"tipo\": \"premium\",\n            \"descripcion\": \"Por favor sin ají\"\n        },\n        {\n            \"id\": \"16f05d0e-1275-44ed-861d-0242ac120012\",\n            \"fecha\": \"2023-03-17\",\n            \"mesaAsignada\": 2,\n            \"numPersonas\": 1,\n            \"tipo\": \"premium\",\n            \"descripcion\": \"Ventana\"\n        }\n    ],\n    \"reseñas\": [\n        {\n            \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\n            \"tipo\": \"Constructiva\",\n            \"descripcion\": \"Tener más mesas\"\n        },\n        {\n            \"id\": \"16f05d0e-1275-44ed-861d-0242dc212141\",\n            \"tipo\": \"Constructiva\",\n            \"descripcion\": \"Tener más cubiertos\"\n        }\n    ],\n    \"establecimientosFav\": [\n        {\n            \"id\": \"16f05d0e-1275-234d-861d-0242dc212141\",\n            \"nombre\": \"Carnal\",\n            \"direccion\": \"Calle 19 #2A-10\",\n            \"capacidad\": 20,\n            \"costoPromedio\": 20000,\n            \"calificacionPromedio\": 5\n        },\n        {\n            \"id\": \"16f05d0e-1275-234d-861d-0242d2312141\",\n            \"nombre\": \"Doña blanca\",\n            \"direccion\": \"Calle 20 #2A-22\",\n            \"capacidad\": 10,\n            \"costoPromedio\": 10000,\n            \"calificacionPromedio\": 3\n        }\n    ],\n    \"tagsPromocion\": [\n        {\n            \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n            \"Nombre\": \"comida china\"\n        },\n        {\n            \"id\": \"16f05d0e-1275-234d-861d-0242d2312151\",\n            \"Nombre\": \"comida japonesa\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Promocion of Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el promocion con el promocionId: \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Invalid Promocion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El Promocion con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Promocion of Invalid Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el establecimiento con el establecimientoId: \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones",
+						"{{promocion_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Establecimiento of Invalid Promocion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"promociones",
+								"{{promocion_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El Establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Promocion Non-Associated to Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"El  promocion con el id dado no esta asociado con el establecimiento\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/{{promocion_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones",
+						"{{promocion_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Promocion Non-Associated to Establecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promocion/{{promocion_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promocion",
+								"{{promocion_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El promocion con el id dado no está asociado al establecimiento\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all Promociones of Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all Promociones of Establecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"16f05d0e-1275-11ed-861d-0242ac120001\",\n        \"usuario\": \"v.escobar1\",\n        \"contraseña\": \"d830vfd\",\n        \"correo\": \"v.escobar1@uniandes.edu.co\",\n        \"perfilAdquisitivo\": 100.67,\n        \"saldo\": 250.000,\n        \"reservaAsignada\": [\n            {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac120001\",\n                \"fecha\": \"2023-03-16\",\n                \"mesaAsignada\": 3,\n                \"numPersonas\": 2,\n                \"tipo\": \"premium\",\n                \"descripcion\": \"Por favor sin ají\"\n            },\n            {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac120012\",\n                \"fecha\": \"2023-03-17\",\n                \"mesaAsignada\": 2,\n                \"numPersonas\": 1,\n                \"tipo\": \"premium\",\n                \"descripcion\": \"Ventana\"\n            }\n        ],\n        \"reseñas\": [\n            {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac122141\",\n                \"tipo\": \"Constructiva\",\n                \"descripcion\": \"Tener más mesas\"\n            },\n            {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242dc212141\",\n                \"tipo\": \"Constructiva\",\n                \"descripcion\": \"Tener más cubiertos\"\n            }\n        ],\n        \"establecimientosFav\": [\n            {\n                \"id\": \"16f05d0e-1275-234d-861d-0242dc212141\",\n                \"nombre\": \"Carnal\",\n                \"direccion\": \"Calle 19 #2A-10\",\n                \"capacidad\": 20,\n                \"costoPromedio\": 20000.0,\n                \"calificacionPromedio\": 5   \n            },\n            {\n                \"id\": \"16f05d0e-1275-234d-861d-0242d2312141\",\n                \"nombre\": \"Doña blanca\",\n                \"direccion\": \"Calle 20 #2A-22\",\n                \"capacidad\": 10,\n                \"costoPromedio\": 10000.0,\n                \"calificacionPromedio\": 3  \n            }\n        ],\n        \"tagsPromocion\": [\n            {\n                \"id\": \"16f05d0e-1275-234d-861d-0242d2312150\",\n                \"Nombre\": \"comida china\"\n            },\n            {\n                \"id\": \"16f05d0e-1275-234d-861d-0242d2312151\",\n                \"Nombre\": \"comida japonesa\"\n            }\n        ]\n    },\n    {\n        \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\n        \"usuario\": \"e.stiven2\",\n        \"contraseña\": \"d83ksds\",\n        \"correo\": \"e.stiven2@uniandes.edu.co\",\n        \"perfilAdquisitivo\": 102.22,\n        \"saldo\": 50000,\n        \"reservaAsignada\": [\n            {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac120231\",\n                \"fecha\": \"2023-03-20\",\n                \"mesaAsignada\": 1,\n                \"numPersonas\": 3,\n                \"tipo\": \"premium\",\n                \"descripcion\": \"Hay bebe\"\n            },\n            {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac120212\",\n                \"fecha\": \"2023-03-22\",\n                \"mesaAsignada\": 5,\n                \"numPersonas\": 5,\n                \"tipo\": \"standard\",\n                \"descripcion\": \"Familia\"\n            }\n        ],\n        \"reseñas\": [\n            {\n                \"id\": \"16f05d0e-1275-44ed-861d-0242ac111141\",\n                \"tipo\": \"Constructiva\",\n                \"descripcion\": \"Mejorar servicio\"\n            },\n            {\n                \"id\": \"16f05d0e-1275-44ed-861e-0242xd212141\",\n                \"tipo\": \"Constructiva\",\n                \"descripcion\": \"Más servilletas\"\n            }\n        ],\n        \"establecimientosFav\": [\n            {\n                \"id\": \"16f05d0e-1275-234d-861d-0242dc212142\",\n                \"nombre\":\"Juan burrito\",\n                \"direccion\":\"Calle 19 #2-11\",\n                \"capacidad\":5,\n                \"costoPromedio\":18000.0,\n                \"calificacionPromedio\":4.5   \n            },\n            {\n                \"id\": \"16f05d0e-1275-234d-8622-0242d2312141\",\n                \"nombre\":\"Saudae\",\n                \"direccion\":\"Calle 22 #2A-22\",\n                \"capacidad\":12,\n                \"costoPromedio\":12000.0,\n                \"calificacionPromedio\":4.0\n            }\n        ],\n        \"tagsPromocion\": [\n            {\n                \"id\": \"16f05d0e-1275-234d-861d-0242d2312330\",\n                \"Nombre\": \"comida vegetariana\"\n            },\n            {\n                \"id\": \"16f05d0e-1275-234d-861d-0242d2314451\",\n                \"Nombre\": \"comida casera\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get All Promociones of Invalid Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el establecimiento con el establecimientoId: \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_read}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Promociones of Invalid Establecimiento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"promociones"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El Establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Promociones of Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{promocion_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Promociones of Establecimiento",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{promocion_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"One Burito\",\n    \"direccion\": \"Calle 21 #2A-49\",\n    \"capacidad\": 5,\n    \"costoPromedio\": 20000,\n    \"calificacionPromedio\": 4.5,\n    \"promociones\":[\n        {\n            \"id\": \"16f05d0e-1275-11ed-861d-0242ac122201\",\n            \"usuario\": \"e.stiven2\",\n            \"contraseña\": \"d83ksds\",\n            \"correo\": \"e.stiven2@uniandes.edu.co\",\n            \"perfilAdquisitivo\": 102.22,\n            \"saldo\": 50000\n        }\n    ],\n    \"menus\":[],\n    \"adminEst\": {\n        \"id\": \"11f05d0e-1275-11ed-861d-0242ac120001\",\n        \"usuario\": \"jj.valencia\",\n        \"contraseña\": \"2490hssGxs\",\n        \"correo\": \"jj.valencia@uniandes.edu.co\"\n    },\n    \"tagEstablecimiento\":[],\n    \"promociones\":[],\n    \"reseñas\": [],\n    \"reservas\":[]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Promocion of Establecimientos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el promocion con el promocionId: \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Invalid Promocion of Establecimientos",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El Promocion con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Promociones of Invalid Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el establecimiento con el establecimientoId: \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_write}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{promocion_id_2}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Promociones of Invalid Establecimiento",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{promocion_id_2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"promociones"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Promocion of Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/{{promocion_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones",
+						"{{promocion_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Promocion of Establecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/{{promocion_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones",
+								"{{promocion_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete Promocion of Invalid Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el establecimiento con el establecimientoId: \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"00000000-0000-0000-0000-000000000000",
+						"promociones",
+						"{{promocion_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Promocion of Invalid Establecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/00000000-0000-0000-0000-000000000000/promociones/{{promocion_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"00000000-0000-0000-0000-000000000000",
+								"promociones",
+								"{{promocion_id_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El establecimiento con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Promocion of Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No existe el promocion con el promocionId: \");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Invalid Promocion of Establecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El promocion con id dado no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Promocion Non-Associated to Establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"El  promocion con el id dado no esta asociado con el establecimiento\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/{{promocion_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}",
+						"promociones",
+						"{{promocion_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Promocion Non-Associated to Establecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}/promociones/{{promocion_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}",
+								"promociones",
+								"{{promocion_id_1}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El promocion con el id dado no está asociado a un establecimiento\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Promocion 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Promo_token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/promociones/{{promocion_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones",
+						"{{promocion_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Promocion",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promociones/{{promocion_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promociones",
+								"{{promocion_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete Promocion 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Promo_token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/promociones/{{promocion_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"promociones",
+						"{{promocion_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Promocion",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/promociones/{{promocion_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"promociones",
+								"{{promocion_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete an establecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"establecimientos",
+						"{{establecimiento_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an establecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/establecimientos/{{establecimiento_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"establecimientos",
+								"{{establecimiento_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete AdministradorEstablecimiento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AdminEst_token_delete}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"administradorEstablecimientos",
+						"{{administradorEstablecimiento_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete AdministradorEstablecimiento",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/administradorEstablecimientos/{{administradorEstablecimiento_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"administradorEstablecimientos",
+								"{{administradorEstablecimiento_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "establecimiento_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "promocion_id_1",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "promocion_id_2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "administradorEstablecimiento_id",
+			"value": ""
+		},
+		{
+			"key": "cliente_id_1",
+			"value": ""
+		},
+		{
+			"key": "cliente_id_2",
+			"value": ""
+		},
+		{
+			"key": "AdminEst_token_write",
+			"value": ""
+		},
+		{
+			"key": "token_write",
+			"value": ""
+		},
+		{
+			"key": "token_read",
+			"value": ""
+		},
+		{
+			"key": "token_delete",
+			"value": ""
+		},
+		{
+			"key": "AdminEst_token_delete",
+			"value": ""
+		},
+		{
+			"key": "Promo_token_write",
+			"value": ""
+		},
+		{
+			"key": "Promo_token_delete",
+			"value": ""
+		}
+	]
+}
